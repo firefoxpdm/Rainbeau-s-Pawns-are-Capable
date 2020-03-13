@@ -153,9 +153,9 @@ namespace PawnsAreCapable {
 	public static class FloatMenuMakerMap_AddHumanlikeOrders {
 		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) {
 			var codes = new List<CodeInstruction>(instructions);
-            Log.Error("patching floatmenumakermap.addhumanlikeorders");
-			for (int i=875; i < 901; i++) {
-				codes[i].opcode = OpCodes.Nop;
+            for (int i = 1236; i < 1265; i++)
+            {
+                codes[i].opcode = OpCodes.Nop;
 			}
 			return codes.AsEnumerable();
 		}
@@ -272,11 +272,10 @@ namespace PawnsAreCapable {
 		}
 	}
 		
-	[HarmonyPatch(typeof(Pawn_StoryTracker), "OneOfWorkTypesIsDisabled", null)]
-	public static class Pawn_StoryTracker_OneOfWorkTypesIsDisabled {
-		public static bool Prefix(List<WorkTypeDef> wts, ref Pawn_StoryTracker __instance, ref bool __result) {
-			var PST = Traverse.Create(__instance);
-			Pawn pawn = PST.Field("pawn").GetValue<Pawn>();
+	[HarmonyPatch(typeof(Pawn), "OneOfWorkTypesIsDisabled", null)]
+	public static class Pawn_OneOfWorkTypesIsDisabled {
+		public static bool Prefix(List<WorkTypeDef> wts, ref Pawn __instance, ref bool __result) {
+			Pawn pawn = __instance;
 			for (int i = 0; i < wts.Count; i++) {
 				if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & wts[i].workTags) > 0) {
 					__result = true;
@@ -288,11 +287,10 @@ namespace PawnsAreCapable {
 		}
 	}
 
-	[HarmonyPatch(typeof(Pawn_StoryTracker), "WorkTagIsDisabled",  null)]
-	public static class Pawn_StoryTracker_WorkTagIsDisabled {
-		public static bool Prefix(WorkTags w, ref Pawn_StoryTracker __instance, ref bool __result) {
-			var PST = Traverse.Create(__instance);
-			Pawn pawn = PST.Field("pawn").GetValue<Pawn>();
+	[HarmonyPatch(typeof(Pawn), "WorkTagIsDisabled",  null)]
+	public static class Pawn_WorkTagIsDisabled {
+		public static bool Prefix(WorkTags w, ref Pawn __instance, ref bool __result) {
+			Pawn pawn = __instance;
 			if (w == WorkTags.Violent) {
 				if ((pawn.equipment.Primary != null) && WeaponCheck.HasWeapon(pawn)) {
 					__result = false;
@@ -305,9 +303,9 @@ namespace PawnsAreCapable {
 		}
 	}
 		
-	[HarmonyPatch(typeof(Pawn_StoryTracker), "WorkTypeIsDisabled",  null)]
-	public static class Pawn_StoryTracker_WorkTypeIsDisabled {
-		public static bool Prefix(WorkTypeDef w, ref bool __result) {
+	[HarmonyPatch(typeof(Pawn), "WorkTypeIsDisabled",  null)]
+	public static class Pawn_WorkTypeIsDisabled {
+		public static bool Prefix(ref bool __result) {
 			__result = false;
 			return false;
 		}
