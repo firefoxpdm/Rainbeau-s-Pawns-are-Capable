@@ -70,6 +70,7 @@
 	<HediffDef>
 		<defName>AssignedToCleaning</defName>
 		<label>assigned to cleaning</label>
+		<description>no clue...</description>
 		<hediffClass>PawnsAreCapable.Hediff_AssignedToCleaning</hediffClass>
 		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
@@ -78,6 +79,7 @@
 	<HediffDef>
 		<defName>AssignedToConstruction</defName>
 		<label>assigned to construction</label>
+		<description>no clue...</description>
 		<hediffClass>PawnsAreCapable.Hediff_AssignedToConstruction</hediffClass>
 		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
@@ -143,6 +145,7 @@
 	<HediffDef>
 		<defName>AssignedToCooking</defName>
 		<label>assigned to cooking</label>
+		<description>no clue...</description>
 		<hediffClass>PawnsAreCapable.Hediff_AssignedToCooking</hediffClass>
 		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
@@ -208,6 +211,7 @@
 	<HediffDef>
 		<defName>AssignedToCrafting</defName>
 		<label>assigned to crafting</label>
+		<description>no clue...</description>
 		<hediffClass>PawnsAreCapable.Hediff_AssignedToCrafting</hediffClass>
 		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
@@ -273,6 +277,7 @@
 	<HediffDef>
 		<defName>AssignedToDoctor</defName>
 		<label>assigned to doctor</label>
+		<description>no clue...</description>
 		<hediffClass>PawnsAreCapable.Hediff_AssignedToDoctor</hediffClass>
 		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
@@ -338,6 +343,7 @@
 	<HediffDef>
 		<defName>AssignedToFirefighter</defName>
 		<label>assigned to firefighter</label>
+		<description>no clue...</description>
 		<hediffClass>PawnsAreCapable.Hediff_AssignedToFirefighter</hediffClass>
 		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
@@ -403,6 +409,7 @@
 	<HediffDef>
 		<defName>AssignedToGrowing</defName>
 		<label>assigned to growing</label>
+		<description>no clue...</description>
 		<hediffClass>PawnsAreCapable.Hediff_AssignedToGrowing</hediffClass>
 		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
@@ -468,6 +475,7 @@
 	<HediffDef>
 		<defName>AssignedToHandling</defName>
 		<label>assigned to handling</label>
+		<description>no clue...</description>
 		<hediffClass>PawnsAreCapable.Hediff_AssignedToHandling</hediffClass>
 		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
@@ -533,6 +541,7 @@
 	<HediffDef>
 		<defName>AssignedToHauling</defName>
 		<label>assigned to hauling</label>
+		<description>no clue...</description>
 		<hediffClass>PawnsAreCapable.Hediff_AssignedToHauling</hediffClass>
 		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
@@ -541,6 +550,7 @@
 	<HediffDef>
 		<defName>AssignedToHunting</defName>
 		<label>assigned to hunting</label>
+		<description>no clue...</description>
 		<hediffClass>PawnsAreCapable.Hediff_AssignedToHunting</hediffClass>
 		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
@@ -606,6 +616,7 @@
 	<HediffDef>
 		<defName>AssignedToMining</defName>
 		<label>assigned to mining</label>
+		<description>no clue...</description>
 		<hediffClass>PawnsAreCapable.Hediff_AssignedToMining</hediffClass>
 		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
@@ -671,6 +682,7 @@
 	<HediffDef>
 		<defName>AssignedToPlantCutting</defName>
 		<label>assigned to plant cutting</label>
+		<description>no clue...</description>
 		<hediffClass>PawnsAreCapable.Hediff_AssignedToPlantCutting</hediffClass>
 		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
@@ -679,6 +691,7 @@
 	<HediffDef>
 		<defName>AssignedToResearch</defName>
 		<label>assigned to research</label>
+		<description>no clue...</description>
 		<hediffClass>PawnsAreCapable.Hediff_AssignedToResearch</hediffClass>
 		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
@@ -744,6 +757,7 @@
 	<HediffDef>
 		<defName>AssignedToSmithing</defName>
 		<label>assigned to smithing</label>
+		<description>no clue...</description>
 		<hediffClass>PawnsAreCapable.Hediff_AssignedToSmithing</hediffClass>
 		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
@@ -809,6 +823,7 @@
 	<HediffDef>
 		<defName>AssignedToTailoring</defName>
 		<label>assigned to tailoring</label>
+		<description>no clue...</description>
 		<hediffClass>PawnsAreCapable.Hediff_AssignedToTailoring</hediffClass>
 		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
@@ -874,6 +889,7 @@
 	<HediffDef>
 		<defName>AssignedToWarden</defName>
 		<label>assigned to warden</label>
+		<description>no clue...</description>
 		<hediffClass>PawnsAreCapable.Hediff_AssignedToWarden</hediffClass>
 		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
@@ -939,6 +955,7 @@
 	<HediffDef>
 		<defName>AssignedAWeapon</defName>
 		<label>assigned a weapon</label>
+		<description>no clue...</description>
 		<hediffClass>PawnsAreCapable.Hediff_AssignedAWeapon</hediffClass>
 		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>

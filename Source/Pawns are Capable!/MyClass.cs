@@ -491,7 +491,7 @@ namespace PawnsAreCapable {
 	public static class WITab_Caravan_Gear_TryEquipDraggedItem {
 		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) {
 			var codes = new List<CodeInstruction>(instructions);
-			for (int i=16; i < 32; i++) {
+			for (int i=12; i < 29; i++) {
 				codes[i].opcode = OpCodes.Nop;
 			}
 			return codes.AsEnumerable();
