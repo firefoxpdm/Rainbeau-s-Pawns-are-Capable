@@ -1,9 +1,8 @@
-﻿using Harmony;
+﻿using HarmonyLib;
 using RimWorld;
 using RimWorld.Planet;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Reflection.Emit;
@@ -110,7 +109,7 @@ namespace PawnsAreCapable {
 		public override string SettingsCategory() { return "PAC.PawnsAreCapable".Translate(); }
 		public override void DoSettingsWindowContents(Rect canvas) { Settings.DoWindowContents(canvas); }
 		public Controller(ModContentPack content) : base(content) {
-			var harmony = HarmonyInstance.Create( "rainbeau.pawnsAreCapable" );
+			var harmony = new Harmony("rainbeau.pawnsAreCapable");
 			harmony.PatchAll( Assembly.GetExecutingAssembly() );
 			Settings = GetSettings<Settings>();
 		}
@@ -131,11 +130,11 @@ namespace PawnsAreCapable {
 			Scribe_Values.Look(ref allowFDJ, "allowFDJ", true);
 		}
 	}
-	
-	// ------------------------------------- //
-	// ---------- HARMONY PATCHES ---------- //
-	// ------------------------------------- //
 
+    // ------------------------------------- //
+    // ---------- HARMONY PATCHES ---------- //
+    // ------------------------------------- //
+    
 	[HarmonyPatch(typeof(CharacterCardUtility), "DrawCharacterCard", new Type[] { typeof(Rect), typeof(Pawn), typeof(Action), typeof(Rect) })]
 	public static class CharacterCardUtility_DrawCharacterCard {
 		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) {
@@ -150,12 +149,13 @@ namespace PawnsAreCapable {
 		}
 	}
 
-	[HarmonyPatch(typeof(FloatMenuMakerMap), "AddHumanlikeOrders", null)]
+	[HarmonyPatch(typeof(FloatMenuMakerMap), "AddHumanlikeOrders")]
 	public static class FloatMenuMakerMap_AddHumanlikeOrders {
 		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) {
 			var codes = new List<CodeInstruction>(instructions);
-			for (int i=875; i < 901; i++) {
-				codes[i].opcode = OpCodes.Nop;
+            for (int i = 1236; i < 1265; i++)
+            {
+                codes[i].opcode = OpCodes.Nop;
 			}
 			return codes.AsEnumerable();
 		}
@@ -178,6 +178,8 @@ namespace PawnsAreCapable {
 		}
 	}
 	
+
+        
 	[HarmonyPatch(typeof(FloatMenuMakerMap), "ChoicesAtFor", null)]
 	public static class FloatMenuMakerMap_ChoicesAtFor {
 		[HarmonyPriority(Priority.VeryLow)]
@@ -185,7 +187,7 @@ namespace PawnsAreCapable {
 			__state = new Dictionary<WorkTypeDef, int>();
 			if (pawn.workSettings != null && Controller.Settings.allowFDJ.Equals(true)) {
 				foreach (WorkTypeDef def in DefDatabase<WorkTypeDef>.AllDefsListForReading) {
-					if (!pawn.story.DisabledWorkTypes.Contains(def) && (pawn.workSettings.GetPriority(def) == 0)) {
+					if (((pawn.story.DisabledWorkTagsBackstoryAndTraits & def.workTags) > 0) && (pawn.workSettings.GetPriority(def) == 0)) {
 						__state.Add(def, pawn.workSettings.GetPriority(def));
 						pawn.workSettings.SetPriority(def, 3);
 					}
@@ -202,7 +204,8 @@ namespace PawnsAreCapable {
 			}
 		}
 	}
-
+    
+    
 	[HarmonyPatch(typeof(FloatMenuUtility), "GetMeleeAttackAction", null)]
 	public static class FloatMenuUtility_GetMeleeAttackAction {
 		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) {
@@ -217,6 +220,7 @@ namespace PawnsAreCapable {
 		}
 	}
 	
+    
 	[HarmonyPatch(typeof(GameInitData), "PrepForMapGen", null)]
 	public static class GameInitData_PrepForMapGen {
 		private static void Postfix(ref GameInitData __instance) {
@@ -227,58 +231,58 @@ namespace PawnsAreCapable {
 			}
 		}
 	}
-	
-	[HarmonyPatch(typeof(PawnGenerator), "GenerateSkills", null)]
-	public static class PawnGenerator_GenerateSkills {
-		private static void Postfix(Pawn pawn) {
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Animals) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Animals).passion = Passion.None;
-			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Artistic) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Artistic).passion = Passion.None;
-			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Caring) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Medicine).passion = Passion.None;
-			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Cooking) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Cooking).passion = Passion.None;
-			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Crafting) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Crafting).passion = Passion.None;
-			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Intellectual) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Intellectual).passion = Passion.None;
-			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.ManualSkilled) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Construction).passion = Passion.None;
-				pawn.skills.GetSkill(SkillDefOf.Cooking).passion = Passion.None;
-				pawn.skills.GetSkill(SkillDefOf.Crafting).passion = Passion.None;
-				pawn.skills.GetSkill(SkillDefOf.Plants).passion = Passion.None;
-				pawn.skills.GetSkill(SkillDefOf.Mining).passion = Passion.None;
-			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Mining) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Mining).passion = Passion.None;
-			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.PlantWork) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Plants).passion = Passion.None;
-			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Social) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Social).passion = Passion.None;
-			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Violent) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Melee).passion = Passion.None;
-				pawn.skills.GetSkill(SkillDefOf.Shooting).passion = Passion.None;
-			}
-		}
-	}
-		
-	[HarmonyPatch(typeof(Pawn_StoryTracker), "OneOfWorkTypesIsDisabled", null)]
-	public static class Pawn_StoryTracker_OneOfWorkTypesIsDisabled {
-		public static bool Prefix(List<WorkTypeDef> wts, ref Pawn_StoryTracker __instance, ref bool __result) {
-			var PST = Traverse.Create(__instance);
-			Pawn pawn = PST.Field("pawn").GetValue<Pawn>();
+
+    
+[HarmonyPatch(typeof(PawnGenerator), "GenerateSkills", null)]
+public static class PawnGenerator_GenerateSkills {
+    private static void Postfix(Pawn pawn) {
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Animals) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Animals).passion = Passion.None;
+        }
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Artistic) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Artistic).passion = Passion.None;
+        }
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Caring) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Medicine).passion = Passion.None;
+        }
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Cooking) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Cooking).passion = Passion.None;
+        }
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Crafting) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Crafting).passion = Passion.None;
+        }
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Intellectual) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Intellectual).passion = Passion.None;
+        }
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualSkilled) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Construction).passion = Passion.None;
+            pawn.skills.GetSkill(SkillDefOf.Cooking).passion = Passion.None;
+            pawn.skills.GetSkill(SkillDefOf.Crafting).passion = Passion.None;
+            pawn.skills.GetSkill(SkillDefOf.Plants).passion = Passion.None;
+            pawn.skills.GetSkill(SkillDefOf.Mining).passion = Passion.None;
+        }
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Mining) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Mining).passion = Passion.None;
+        }
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.PlantWork) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Plants).passion = Passion.None;
+        }
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Social) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Social).passion = Passion.None;
+        }
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Violent) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Melee).passion = Passion.None;
+            pawn.skills.GetSkill(SkillDefOf.Shooting).passion = Passion.None;
+        }
+    }
+}
+    
+    [HarmonyPatch(typeof(Pawn), "OneOfWorkTypesIsDisabled", null)]
+	public static class Pawn_OneOfWorkTypesIsDisabled {
+		public static bool Prefix(List<WorkTypeDef> wts, ref Pawn __instance, ref bool __result) {
+			Pawn pawn = __instance;
 			for (int i = 0; i < wts.Count; i++) {
-				if (pawn.story.DisabledWorkTypes.Contains(wts[i])) {
+				if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & wts[i].workTags) > 0) {
 					__result = true;
 					return false;
 				}
@@ -288,26 +292,35 @@ namespace PawnsAreCapable {
 		}
 	}
 
-	[HarmonyPatch(typeof(Pawn_StoryTracker), "WorkTagIsDisabled",  null)]
-	public static class Pawn_StoryTracker_WorkTagIsDisabled {
-		public static bool Prefix(WorkTags w, ref Pawn_StoryTracker __instance, ref bool __result) {
-			var PST = Traverse.Create(__instance);
-			Pawn pawn = PST.Field("pawn").GetValue<Pawn>();
-			if (w == WorkTags.Violent) {
-				if ((pawn.equipment.Primary != null) && WeaponCheck.HasWeapon(pawn)) {
-					__result = false;
-					return false;
-				}
-				return true;
-			}
-			__result = false;
-			return false;
-		}
-	}
-		
-	[HarmonyPatch(typeof(Pawn_StoryTracker), "WorkTypeIsDisabled",  null)]
-	public static class Pawn_StoryTracker_WorkTypeIsDisabled {
-		public static bool Prefix(WorkTypeDef w, ref bool __result) {
+
+    [HarmonyPatch(typeof(Pawn), "WorkTagIsDisabled", null)]
+    public static class Pawn_WorkTagIsDisabled
+    {
+        public static bool Prefix(WorkTags w, ref Pawn __instance, ref bool __result)
+        {
+            Pawn pawn = __instance;
+            if (w == WorkTags.Violent)
+            {
+                if (pawn.equipment == null)
+                {
+                    return true;
+                }
+
+                if ((pawn.equipment.Primary != null) && WeaponCheck.HasWeapon(pawn))
+                {
+                    __result = false;
+                    return false;
+                }
+                return true;
+            }
+            __result = false;
+            return false;
+        }
+    }
+	
+    [HarmonyPatch(typeof(Pawn), "WorkTypeIsDisabled",  null)]
+	public static class Pawn_WorkTypeIsDisabled {
+		public static bool Prefix(ref bool __result) {
 			__result = false;
 			return false;
 		}
@@ -329,7 +342,7 @@ namespace PawnsAreCapable {
 			return false;
 		}
 	}
-
+    
 	[HarmonyPatch(typeof(WidgetsWork), "DrawWorkBoxBackground", null)]
 	public static class WidgetsWork_DrawWorkBoxBackground {
 		private static bool Prefix(Rect rect, Pawn p, WorkTypeDef workDef) {
@@ -353,52 +366,52 @@ namespace PawnsAreCapable {
 				single = (single1 - 4f) / 10f;
 			}
 			bool badWork = false;
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Animals) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Animals) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.AnimalsJobs) {
 					if (workDef.Equals(workType)) { badWork = true; }
 				}
 			}
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Artistic) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Artistic) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.ArtisticJobs) {
 					if (workDef.Equals(workType)) { badWork = true; }
 				}
 			}
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Caring) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Caring) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.CaringJobs) {
 					if (workDef.Equals(workType)) { badWork = true; }
 				}
 			}
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Cleaning) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Cleaning) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.CleaningJobs) {
 					if (workDef.Equals(workType)) { badWork = true; }
 				}
 			}
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Cooking) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Cooking) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.CookingJobs) {
 					if (workDef.Equals(workType)) { badWork = true; }
 				}
 			}
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Crafting) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Crafting) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.CraftingJobs) {
 					if (workDef.Equals(workType)) { badWork = true; }
 				}
 			}
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Firefighting) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Firefighting) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.FirefightingJobs) {
 					if (workDef.Equals(workType)) { badWork = true; }
 				}
 			}
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Hauling) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Hauling) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.HaulingJobs) {
 					if (workDef.Equals(workType)) { badWork = true; }
 				}
 			}
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Intellectual) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Intellectual) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.IntellectualJobs) {
 					if (workDef.Equals(workType)) { badWork = true; }
 				}
 			}
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.ManualDumb) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualDumb) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.ManualDumbJobs) {
 					if (workDef.Equals(workType)) { badWork = true; }
 				}
@@ -409,7 +422,7 @@ namespace PawnsAreCapable {
 					if (workDef.Equals(workType)) { badWork = true; }
 				}
 			}
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.ManualSkilled) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualSkilled) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.ManualSkilledJobs) {
 					if (workDef.Equals(workType)) { badWork = true; }
 				}
@@ -423,22 +436,22 @@ namespace PawnsAreCapable {
 					if (workDef.Equals(workType)) { badWork = true; }
 				}
 			}
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Mining) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Mining) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.MiningJobs) {
 					if (workDef.Equals(workType)) { badWork = true; }
 				}
 			}
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.PlantWork) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.PlantWork) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.PlantWorkJobs) {
 					if (workDef.Equals(workType)) { badWork = true; }
 				}
 			}
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Social) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Social) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.SocialJobs) {
 					if (workDef.Equals(workType)) { badWork = true; }
 				}
 			}
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Violent) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Violent) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.ViolentJobs) {
 					if (workDef.Equals(workType)) { badWork = true; }
 				}
@@ -474,13 +487,13 @@ namespace PawnsAreCapable {
 			return false;
 		}
 	}
-	
-	[HarmonyPatch(typeof(WidgetsWork), "TipForPawnWorker", new Type[] { typeof(Pawn), typeof(WorkTypeDef), typeof(bool) })]
+    
+    [HarmonyPatch(typeof(WidgetsWork), "TipForPawnWorker", new Type[] { typeof(Pawn), typeof(WorkTypeDef), typeof(bool) })]
 	public static class WidgetsWork_TipForPawnWorker {
 		public static bool Prefix(Pawn p, WorkTypeDef wDef, bool incapableBecauseOfCapacities, ref string __result) {
 			StringBuilder stringBuilder = new StringBuilder();
 			stringBuilder.AppendLine(wDef.gerundLabel.CapitalizeFirst());
-			if (p.story.DisabledWorkTypes.Contains(wDef)) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & wDef.workTags) > 0) {
 				stringBuilder.Append("PAC.CannotDoThisWork".Translate(p.LabelShort));
 				__result = stringBuilder.ToString();
 				return false;
@@ -488,12 +501,12 @@ namespace PawnsAreCapable {
 			return true;
 		}
 	}
-
+    
 	[HarmonyPatch(typeof(WITab_Caravan_Gear), "TryEquipDraggedItem", null)]
 	public static class WITab_Caravan_Gear_TryEquipDraggedItem {
 		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) {
 			var codes = new List<CodeInstruction>(instructions);
-			for (int i=16; i < 32; i++) {
+			for (int i=12; i < 29; i++) {
 				codes[i].opcode = OpCodes.Nop;
 			}
 			return codes.AsEnumerable();
@@ -502,52 +515,52 @@ namespace PawnsAreCapable {
 		
 	public static class ResetWork {
 		public static void ResetHatedWorkTypes(Pawn pawn) {
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Animals) != 0) {
+			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Animals) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.AnimalsJobs) {
 					pawn.workSettings.SetPriority(workType, 0);
 				}
 			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Artistic) != 0) {
+			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Artistic) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.ArtisticJobs) {
 					pawn.workSettings.SetPriority(workType, 0);
 				}
 			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Caring) != 0) {
+			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Caring) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.CaringJobs) {
 					pawn.workSettings.SetPriority(workType, 0);
 				}
 			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Cleaning) != 0) {
+			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Cleaning) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.CleaningJobs) {
 					pawn.workSettings.SetPriority(workType, 0);
 				}
 			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Cooking) != 0) {
+			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Cooking) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.CookingJobs) {
 					pawn.workSettings.SetPriority(workType, 0);
 				}
 			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Crafting) != 0) {
+			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Crafting) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.CraftingJobs) {
 					pawn.workSettings.SetPriority(workType, 0);
 				}
 			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Firefighting) != 0) {
+			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Firefighting) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.FirefightingJobs) {
 					pawn.workSettings.SetPriority(workType, 0);
 				}
 			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Hauling) != 0) {
+			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Hauling) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.HaulingJobs) {
 					pawn.workSettings.SetPriority(workType, 0);
 				}
 			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Intellectual) != 0) {
+			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Intellectual) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.IntellectualJobs) {
 					pawn.workSettings.SetPriority(workType, 0);
 				}
 			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.ManualDumb) != 0) {
+			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualDumb) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.ManualDumbJobs) {
 					pawn.workSettings.SetPriority(workType, 0);
 				}
@@ -558,7 +571,7 @@ namespace PawnsAreCapable {
 					pawn.workSettings.SetPriority(workType, 0);
 				}
 			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.ManualSkilled) != 0) {
+			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualSkilled) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.ManualSkilledJobs) {
 					pawn.workSettings.SetPriority(workType, 0);
 				}
@@ -572,22 +585,22 @@ namespace PawnsAreCapable {
 					pawn.workSettings.SetPriority(workType, 0);
 				}
 			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Mining) != 0) {
+			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Mining) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.MiningJobs) {
 					pawn.workSettings.SetPriority(workType, 0);
 				}
 			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.PlantWork) != 0) {
+			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.PlantWork) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.PlantWorkJobs) {
 					pawn.workSettings.SetPriority(workType, 0);
 				}
 			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Social) != 0) {
+			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Social) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.SocialJobs) {
 					pawn.workSettings.SetPriority(workType, 0);
 				}
 			}
-			if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Violent) != 0) {
+			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Violent) != 0) {
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.ViolentJobs) {
 					pawn.workSettings.SetPriority(workType, 0);
 				}
@@ -1133,7 +1146,7 @@ namespace PawnsAreCapable {
 		public HediffGiver_AssignedToArt() { }
 		public override void OnIntervalPassed(Pawn pawn, Hediff cause) {
 			if (pawn.IsColonist) {
-				if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Artistic) != 0) {
+				if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Artistic) != 0) {
 					bool check = false;
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.ArtisticJobs) {
 						if (pawn.workSettings.WorkIsActive(workType)) { check = true; }
@@ -1167,7 +1180,7 @@ namespace PawnsAreCapable {
 		public HediffGiver_AssignedToCleaning() { }
 		public override void OnIntervalPassed(Pawn pawn, Hediff cause) {
 			if (pawn.IsColonist) {
-				if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Cleaning) != 0 || (pawn.story.CombinedDisabledWorkTags & WorkTags.ManualDumb) != 0) {
+				if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Cleaning) != 0 || (pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualDumb) != 0) {
 					bool check = false;
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.CleaningJobs) {
 						if (pawn.workSettings.WorkIsActive(workType)) { check = true; }
@@ -1187,8 +1200,17 @@ namespace PawnsAreCapable {
 		public HediffGiver_AssignedToConstruction() { }
 		public override void OnIntervalPassed(Pawn pawn, Hediff cause) {
 			if (pawn.IsColonist) {
-				if (pawn.workSettings.WorkIsActive(WorkTypeDefOf.Construction) && (pawn.story.DisabledWorkTypes.Contains(WorkTypeDefOf.Construction) || (pawn.story.CombinedDisabledWorkTags & WorkTags.ManualSkilled) != 0)) {
-					if (pawn.health.hediffSet.HasHediff(HediffDef.Named("AssignedToConstruction"))) {
+				if (
+                    pawn.workSettings.WorkIsActive(WorkTypeDefOf.Construction)
+                    &&
+                    (
+                      ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTypeDefOf.Construction.workTags) > 0)
+                      || 
+                      (pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualSkilled) != 0
+                    )
+                   ) {
+
+                    if (pawn.health.hediffSet.HasHediff(HediffDef.Named("AssignedToConstruction"))) {
 						Hediff_AssignedToConstruction firstHediffOfDef = (Hediff_AssignedToConstruction)pawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("AssignedToConstruction"), false);
 						if (firstHediffOfDef.ageTicks > 120000) {
 							firstHediffOfDef.Severity = 0.4f;
@@ -1215,7 +1237,7 @@ namespace PawnsAreCapable {
 		public HediffGiver_AssignedToCooking() { }
 		public override void OnIntervalPassed(Pawn pawn, Hediff cause) {
 			if (pawn.IsColonist) {
-				if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Cooking) != 0 || (pawn.story.CombinedDisabledWorkTags & WorkTags.ManualSkilled) != 0) {
+				if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Cooking) != 0 || (pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualSkilled) != 0) {
 					bool check = false;
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.CookingJobs) {
 						if (pawn.workSettings.WorkIsActive(workType)) { check = true; }
@@ -1249,7 +1271,7 @@ namespace PawnsAreCapable {
 		public HediffGiver_AssignedToCrafting() { }
 		public override void OnIntervalPassed(Pawn pawn, Hediff cause) {
 			if (pawn.IsColonist) {
-				if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Crafting) != 0 || (pawn.story.CombinedDisabledWorkTags & WorkTags.ManualSkilled) != 0) {
+				if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Crafting) != 0 || (pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualSkilled) != 0) {
 					bool check = false;
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.CraftingJobs) {
 						if (workType == WorkTypeDefOf.Smithing || workType == WorkTypeDefOf.Tailoring) { }
@@ -1284,7 +1306,7 @@ namespace PawnsAreCapable {
 		public HediffGiver_AssignedToDoctor() { }
 		public override void OnIntervalPassed(Pawn pawn, Hediff cause) {
 			if (pawn.IsColonist) {
-				if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Caring) != 0) {
+				if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Caring) != 0) {
 					bool check = false;
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.CaringJobs) {
 						if (pawn.workSettings.WorkIsActive(workType)) { check = true; }
@@ -1318,7 +1340,7 @@ namespace PawnsAreCapable {
 		public HediffGiver_AssignedToFirefighter() { }
 		public override void OnIntervalPassed(Pawn pawn, Hediff cause) {
 			if (pawn.IsColonist) {
-				if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Firefighting) != 0) {
+				if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Firefighting) != 0) {
 					bool check = false;
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.FirefightingJobs) {
 						if (pawn.workSettings.WorkIsActive(workType)) { check = true; }
@@ -1352,7 +1374,7 @@ namespace PawnsAreCapable {
 		public HediffGiver_AssignedToGrowing() { }
 		public override void OnIntervalPassed(Pawn pawn, Hediff cause) {
 			if (pawn.IsColonist) {
-				if ((pawn.story.CombinedDisabledWorkTags & WorkTags.PlantWork) != 0 || (pawn.story.CombinedDisabledWorkTags & WorkTags.ManualSkilled) != 0) {
+				if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.PlantWork) != 0 || (pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualSkilled) != 0) {
 					bool check = false;
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.PlantWorkJobs) {
 						if (workType == WorkTypeDefOf.PlantCutting) { }
@@ -1387,7 +1409,7 @@ namespace PawnsAreCapable {
 		public HediffGiver_AssignedToHandling() { }
 		public override void OnIntervalPassed(Pawn pawn, Hediff cause) {
 			if (pawn.IsColonist) {
-				if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Animals) != 0) {
+				if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Animals) != 0) {
 					bool check = false;
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.AnimalsJobs) {
 						if (pawn.workSettings.WorkIsActive(workType)) { check = true; }
@@ -1421,7 +1443,7 @@ namespace PawnsAreCapable {
 		public HediffGiver_AssignedToHauling() { }
 		public override void OnIntervalPassed(Pawn pawn, Hediff cause) {
 			if (pawn.IsColonist) {
-				if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Hauling) != 0 || (pawn.story.CombinedDisabledWorkTags & WorkTags.ManualDumb) != 0) {
+				if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Hauling) != 0 || (pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualDumb) != 0) {
 					bool check = false;
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.HaulingJobs) {
 						if (pawn.workSettings.WorkIsActive(workType)) { check = true; }
@@ -1441,7 +1463,7 @@ namespace PawnsAreCapable {
 		public HediffGiver_AssignedToHunting() { }
 		public override void OnIntervalPassed(Pawn pawn, Hediff cause) {
 			if (pawn.IsColonist) {
-				if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Violent) != 0) {
+				if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Violent) != 0) {
 					bool check = false;
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.ViolentJobs) {
 						if (pawn.workSettings.WorkIsActive(workType)) { check = true; }
@@ -1475,7 +1497,7 @@ namespace PawnsAreCapable {
 		public HediffGiver_AssignedToMining() { }
 		public override void OnIntervalPassed(Pawn pawn, Hediff cause) {
 			if (pawn.IsColonist) {
-				if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Mining) != 0 || (pawn.story.CombinedDisabledWorkTags & WorkTags.ManualSkilled) != 0) {
+				if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Mining) != 0 || (pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualSkilled) != 0) {
 					bool check = false;
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.MiningJobs) {
 						if (pawn.workSettings.WorkIsActive(workType)) { check = true; }
@@ -1509,7 +1531,9 @@ namespace PawnsAreCapable {
 		public HediffGiver_AssignedToPlantCutting() { }
 		public override void OnIntervalPassed(Pawn pawn, Hediff cause) {
 			if (pawn.IsColonist) {
-				if (pawn.workSettings.WorkIsActive(WorkTypeDefOf.PlantCutting) && (pawn.story.DisabledWorkTypes.Contains(WorkTypeDefOf.PlantCutting))) {
+				if (pawn.workSettings.WorkIsActive(WorkTypeDefOf.PlantCutting) && 
+                    ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTypeDefOf.PlantCutting.workTags) > 0)
+                  ) {
 					if (pawn.health.hediffSet.HasHediff(HediffDef.Named("AssignedToPlantCutting"))) {
 						Hediff_AssignedToPlantCutting firstHediffOfDef = (Hediff_AssignedToPlantCutting)pawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("AssignedToPlantCutting"), false);
 						firstHediffOfDef.Severity = 0.01f;
@@ -1523,7 +1547,7 @@ namespace PawnsAreCapable {
 		public HediffGiver_AssignedToResearch() { }
 		public override void OnIntervalPassed(Pawn pawn, Hediff cause) {
 			if (pawn.IsColonist) {
-				if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Intellectual) != 0) {
+				if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Intellectual) != 0) {
 					bool check = false;
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.IntellectualJobs) {
 						if (pawn.workSettings.WorkIsActive(workType)) { check = true; }
@@ -1557,7 +1581,11 @@ namespace PawnsAreCapable {
 		public HediffGiver_AssignedToSmithing() { }
 		public override void OnIntervalPassed(Pawn pawn, Hediff cause) {
 			if (pawn.IsColonist) {
-				if (pawn.workSettings.WorkIsActive(WorkTypeDefOf.Smithing) && (pawn.story.DisabledWorkTypes.Contains(WorkTypeDefOf.Smithing) || (pawn.story.CombinedDisabledWorkTags & WorkTags.ManualSkilled) != 0)) {
+				if (pawn.workSettings.WorkIsActive(WorkTypeDefOf.Smithing) && (
+                    
+                    ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTypeDefOf.Smithing.workTags) > 0)
+                    
+                    || (pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualSkilled) != 0)) {
 					if (pawn.health.hediffSet.HasHediff(HediffDef.Named("AssignedToSmithing"))) {
 						Hediff_AssignedToSmithing firstHediffOfDef = (Hediff_AssignedToSmithing)pawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("AssignedToSmithing"), false);
 						if (firstHediffOfDef.ageTicks > 120000) {
@@ -1585,7 +1613,11 @@ namespace PawnsAreCapable {
 		public HediffGiver_AssignedToTailoring() { }
 		public override void OnIntervalPassed(Pawn pawn, Hediff cause) {
 			if (pawn.IsColonist) {
-				if (pawn.workSettings.WorkIsActive(WorkTypeDefOf.Tailoring) && (pawn.story.DisabledWorkTypes.Contains(WorkTypeDefOf.Tailoring) || (pawn.story.CombinedDisabledWorkTags & WorkTags.ManualSkilled) != 0)) {
+				if (pawn.workSettings.WorkIsActive(WorkTypeDefOf.Tailoring) && (
+                    
+                    ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTypeDefOf.Tailoring.workTags) > 0)
+                    
+                    || (pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualSkilled) != 0)) {
 					if (pawn.health.hediffSet.HasHediff(HediffDef.Named("AssignedToTailoring"))) {
 						Hediff_AssignedToTailoring firstHediffOfDef = (Hediff_AssignedToTailoring)pawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("AssignedToTailoring"), false);
 						if (firstHediffOfDef.ageTicks > 120000) {
@@ -1613,7 +1645,7 @@ namespace PawnsAreCapable {
 		public HediffGiver_AssignedToWarden() { }
 		public override void OnIntervalPassed(Pawn pawn, Hediff cause) {
 			if (pawn.IsColonist) {
-				if ((pawn.story.CombinedDisabledWorkTags & WorkTags.Social) != 0) {
+				if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Social) != 0) {
 					bool check = false;
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.SocialJobs) {
 						if (pawn.workSettings.WorkIsActive(workType)) { check = true; }
@@ -1647,7 +1679,11 @@ namespace PawnsAreCapable {
 		public HediffGiver_AssignedAWeapon() { }
 		public override void OnIntervalPassed(Pawn pawn, Hediff cause) {
 			if (pawn.IsColonist) {
-				if (((pawn.equipment.Primary != null) && WeaponCheck.HasWeapon(pawn)) && pawn.story.DisabledWorkTypes.Contains(WorkTypeDefOf.Hunting)) {
+				if (((pawn.equipment.Primary != null) && WeaponCheck.HasWeapon(pawn)) && 
+                    
+                    ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTypeDefOf.Hunting.workTags) > 0)
+                    
+                    ) {
 					if (pawn.health.hediffSet.HasHediff(HediffDef.Named("AssignedAWeapon"))) {
 						Hediff_AssignedAWeapon firstHediffOfDef = (Hediff_AssignedAWeapon)pawn.health.hediffSet.GetFirstHediffOfDef(HediffDef.Named("AssignedAWeapon"), false);
 						if (firstHediffOfDef.ageTicks > 120000) {
@@ -1677,7 +1713,7 @@ namespace PawnsAreCapable {
 
 	public class ThoughtWorker_AssignedToArt : ThoughtWorker {
 		protected override ThoughtState CurrentStateInternal(Pawn p) {
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Artistic) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Artistic) != 0) {
 				bool check = false;
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.ArtisticJobs) {
 					if (p.workSettings.WorkIsActive(workType)) { check = true; }
@@ -1715,7 +1751,7 @@ namespace PawnsAreCapable {
 	
 	public class ThoughtWorker_AssignedToCleaning : ThoughtWorker {
 		protected override ThoughtState CurrentStateInternal(Pawn p) {
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Cleaning) != 0 || (p.story.CombinedDisabledWorkTags & WorkTags.ManualDumb) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Cleaning) != 0 || (p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualDumb) != 0) {
 				bool check = false;
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.CleaningJobs) {
 					if (p.workSettings.WorkIsActive(workType)) { check = true; }
@@ -1741,7 +1777,11 @@ namespace PawnsAreCapable {
 
 	public class ThoughtWorker_AssignedToConstruction : ThoughtWorker {
 		protected override ThoughtState CurrentStateInternal(Pawn p) {
-			if (p.workSettings.WorkIsActive(WorkTypeDefOf.Construction) && (p.story.DisabledWorkTypes.Contains(WorkTypeDefOf.Construction) || (p.story.CombinedDisabledWorkTags & WorkTags.ManualSkilled) != 0)) {
+			if (p.workSettings.WorkIsActive(WorkTypeDefOf.Construction) && (
+                
+                ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTypeDefOf.Construction.workTags) > 0)
+                
+                || (p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualSkilled) != 0)) {
 				if (!p.health.hediffSet.HasHediff(HediffDef.Named("AssignedToConstruction"))) {
 					p.health.AddHediff(HediffDef.Named("AssignedToConstruction"));
 				}
@@ -1773,7 +1813,7 @@ namespace PawnsAreCapable {
 
 	public class ThoughtWorker_AssignedToCooking : ThoughtWorker {
 		protected override ThoughtState CurrentStateInternal(Pawn p) {
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Cooking) != 0 || (p.story.CombinedDisabledWorkTags & WorkTags.ManualSkilled) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Cooking) != 0 || (p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualSkilled) != 0) {
 				bool check = false;
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.CookingJobs) {
 					if (p.workSettings.WorkIsActive(workType)) { check = true; }
@@ -1811,7 +1851,7 @@ namespace PawnsAreCapable {
 
 	public class ThoughtWorker_AssignedToCrafting : ThoughtWorker {
 		protected override ThoughtState CurrentStateInternal(Pawn p) {
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Crafting) != 0 || (p.story.CombinedDisabledWorkTags & WorkTags.ManualSkilled) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Crafting) != 0 || (p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualSkilled) != 0) {
 				bool check = false;
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.CraftingJobs) {
 					if (workType == WorkTypeDefOf.Smithing || workType == WorkTypeDefOf.Tailoring) { }
@@ -1850,7 +1890,7 @@ namespace PawnsAreCapable {
 
 	public class ThoughtWorker_AssignedToDoctor : ThoughtWorker {
 		protected override ThoughtState CurrentStateInternal(Pawn p) {
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Caring) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Caring) != 0) {
 				bool check = false;
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.CaringJobs) {
 					if (p.workSettings.WorkIsActive(workType)) { check = true; }
@@ -1888,7 +1928,7 @@ namespace PawnsAreCapable {
 
 	public class ThoughtWorker_AssignedToFirefighter : ThoughtWorker {
 		protected override ThoughtState CurrentStateInternal(Pawn p) {
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Firefighting) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Firefighting) != 0) {
 				bool check = false;
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.FirefightingJobs) {
 					if (p.workSettings.WorkIsActive(workType)) { check = true; }
@@ -1926,7 +1966,7 @@ namespace PawnsAreCapable {
 
 	public class ThoughtWorker_AssignedToGrowing : ThoughtWorker {
 		protected override ThoughtState CurrentStateInternal(Pawn p) {
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.PlantWork) != 0 || (p.story.CombinedDisabledWorkTags & WorkTags.ManualSkilled) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.PlantWork) != 0 || (p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualSkilled) != 0) {
 				bool check = false;
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.PlantWorkJobs) {
 					if (workType == WorkTypeDefOf.PlantCutting) { }
@@ -1965,7 +2005,7 @@ namespace PawnsAreCapable {
 
 	public class ThoughtWorker_AssignedToHandling : ThoughtWorker {
 		protected override ThoughtState CurrentStateInternal(Pawn p) {
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Animals) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Animals) != 0) {
 				bool check = false;
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.AnimalsJobs) {
 					if (p.workSettings.WorkIsActive(workType)) { check = true; }
@@ -2003,7 +2043,7 @@ namespace PawnsAreCapable {
 	
 	public class ThoughtWorker_AssignedToHauling : ThoughtWorker {
 		protected override ThoughtState CurrentStateInternal(Pawn p) {
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Hauling) != 0 || (p.story.CombinedDisabledWorkTags & WorkTags.ManualDumb) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Hauling) != 0 || (p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualDumb) != 0) {
 				bool check = false;
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.HaulingJobs) {
 					if (p.workSettings.WorkIsActive(workType)) { check = true; }
@@ -2029,7 +2069,7 @@ namespace PawnsAreCapable {
 
 	public class ThoughtWorker_AssignedToHunting : ThoughtWorker {
 		protected override ThoughtState CurrentStateInternal(Pawn p) {
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Violent) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Violent) != 0) {
 				bool check = false;
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.ViolentJobs) {
 					if (p.workSettings.WorkIsActive(workType)) { check = true; }
@@ -2067,7 +2107,7 @@ namespace PawnsAreCapable {
 
 	public class ThoughtWorker_AssignedToMining : ThoughtWorker {
 		protected override ThoughtState CurrentStateInternal(Pawn p) {
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Mining) != 0 || (p.story.CombinedDisabledWorkTags & WorkTags.ManualSkilled) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Mining) != 0 || (p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualSkilled) != 0) {
 				bool check = false;
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.MiningJobs) {
 					if (p.workSettings.WorkIsActive(workType)) { check = true; }
@@ -2105,7 +2145,11 @@ namespace PawnsAreCapable {
 
 	public class ThoughtWorker_AssignedToPlantCutting : ThoughtWorker {
 		protected override ThoughtState CurrentStateInternal(Pawn p) {
-			if (p.workSettings.WorkIsActive(WorkTypeDefOf.PlantCutting) && (p.story.DisabledWorkTypes.Contains(WorkTypeDefOf.PlantCutting))) {
+			if (p.workSettings.WorkIsActive(WorkTypeDefOf.PlantCutting) && (
+                
+                ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTypeDefOf.PlantCutting.workTags)>0)
+                
+                )) {
 				if (!p.health.hediffSet.HasHediff(HediffDef.Named("AssignedToPlantCutting"))) {
 					p.health.AddHediff(HediffDef.Named("AssignedToPlantCutting"));
 				}
@@ -2125,7 +2169,7 @@ namespace PawnsAreCapable {
 
 	public class ThoughtWorker_AssignedToResearch : ThoughtWorker {
 		protected override ThoughtState CurrentStateInternal(Pawn p) {
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Intellectual) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Intellectual) != 0) {
 				bool check = false;
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.IntellectualJobs) {
 					if (p.workSettings.WorkIsActive(workType)) { check = true; }
@@ -2163,7 +2207,12 @@ namespace PawnsAreCapable {
 
 	public class ThoughtWorker_AssignedToSmithing : ThoughtWorker {
 		protected override ThoughtState CurrentStateInternal(Pawn p) {
-			if (p.workSettings.WorkIsActive(WorkTypeDefOf.Smithing) && (p.story.DisabledWorkTypes.Contains(WorkTypeDefOf.Smithing) || (p.story.CombinedDisabledWorkTags & WorkTags.ManualSkilled) != 0)) {
+			if (p.workSettings.WorkIsActive(WorkTypeDefOf.Smithing) && (
+                
+                ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTypeDefOf.Smithing.workTags) > 0)
+                
+                
+                || (p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualSkilled) != 0)) {
 				if (!p.health.hediffSet.HasHediff(HediffDef.Named("AssignedToSmithing"))) {
 					p.health.AddHediff(HediffDef.Named("AssignedToSmithing"));
 				}
@@ -2195,7 +2244,12 @@ namespace PawnsAreCapable {
 
 	public class ThoughtWorker_AssignedToTailoring : ThoughtWorker {
 		protected override ThoughtState CurrentStateInternal(Pawn p) {
-			if (p.workSettings.WorkIsActive(WorkTypeDefOf.Tailoring) && (p.story.DisabledWorkTypes.Contains(WorkTypeDefOf.Tailoring) || (p.story.CombinedDisabledWorkTags & WorkTags.ManualSkilled) != 0)) {
+			if (p.workSettings.WorkIsActive(WorkTypeDefOf.Tailoring) && (
+                
+                ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTypeDefOf.Tailoring.workTags ) > 0)
+                
+                
+                || (p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualSkilled) != 0)) {
 				if (!p.health.hediffSet.HasHediff(HediffDef.Named("AssignedToTailoring"))) {
 					p.health.AddHediff(HediffDef.Named("AssignedToTailoring"));
 				}
@@ -2227,7 +2281,7 @@ namespace PawnsAreCapable {
 
 	public class ThoughtWorker_AssignedToWarden : ThoughtWorker {
 		protected override ThoughtState CurrentStateInternal(Pawn p) {
-			if ((p.story.CombinedDisabledWorkTags & WorkTags.Social) != 0) {
+			if ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Social) != 0) {
 				bool check = false;
 				foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.SocialJobs) {
 					if (p.workSettings.WorkIsActive(workType)) { check = true; }
@@ -2265,7 +2319,12 @@ namespace PawnsAreCapable {
 
 	public class ThoughtWorker_AssignedAWeapon : ThoughtWorker {
 		protected override ThoughtState CurrentStateInternal(Pawn p) {
-			if (((p.equipment.Primary != null) && WeaponCheck.HasWeapon(p)) && p.story.DisabledWorkTypes.Contains(WorkTypeDefOf.Hunting)) {
+			if (((p.equipment.Primary != null) && WeaponCheck.HasWeapon(p)) && 
+                
+                ((p.story.DisabledWorkTagsBackstoryAndTraits & WorkTypeDefOf.Hunting.workTags) > 0)
+                
+                
+                ) {
 				if (!p.health.hediffSet.HasHediff(HediffDef.Named("AssignedAWeapon"))) {
 					p.health.AddHediff(HediffDef.Named("AssignedAWeapon"));
 				}
@@ -2307,67 +2366,71 @@ namespace PawnsAreCapable {
 		}
 		public override AlertReport GetReport() {
 			foreach (Pawn current in PawnsFinder.AllMaps_FreeColonistsSpawned) {
-				if ((current.story.CombinedDisabledWorkTags & WorkTags.Artistic) != 0) {
+				if ((current.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Artistic) != 0) {
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.ArtisticJobs) {
 						if (current.workSettings.WorkIsActive(workType)) { return current; }
 					}
 				}
-				if (current.story.DisabledWorkTypes.Contains(WorkTypeDefOf.Construction)
+				if (
+                    
+                    ((current.story.DisabledWorkTagsBackstoryAndTraits & WorkTypeDefOf.Construction.workTags) > 0)
+
+
 				  && current.workSettings.WorkIsActive(WorkTypeDefOf.Construction)) { 
 					return current;
 				}
-				if ((current.story.CombinedDisabledWorkTags & WorkTags.Cooking) != 0) {
+				if ((current.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Cooking) != 0) {
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.CookingJobs) {
 						if (current.workSettings.WorkIsActive(workType)) { return current; }
 					}
 				}
-				if ((current.story.CombinedDisabledWorkTags & WorkTags.Crafting) != 0) {
+				if ((current.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Crafting) != 0) {
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.CraftingJobs) {
 						if (current.workSettings.WorkIsActive(workType)) { return current; }
 					}
 				}
-				if ((current.story.CombinedDisabledWorkTags & WorkTags.Caring) != 0) {
+				if ((current.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Caring) != 0) {
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.CaringJobs) {
 						if (current.workSettings.WorkIsActive(workType)) { return current; }
 					}
 				}
-				if ((current.story.CombinedDisabledWorkTags & WorkTags.Firefighting) != 0) {
+				if ((current.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Firefighting) != 0) {
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.FirefightingJobs) {
 						if (current.workSettings.WorkIsActive(workType)) { return current; }
 					}
 				}
-				if ((current.story.CombinedDisabledWorkTags & WorkTags.PlantWork) != 0) {
+				if ((current.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.PlantWork) != 0) {
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.PlantWorkJobs) {
 						if (workType == WorkTypeDefOf.PlantCutting) { }
 						else if (current.workSettings.WorkIsActive(workType)) { return current; }
 					}
 				}
-				if ((current.story.CombinedDisabledWorkTags & WorkTags.Animals) != 0) {
+				if ((current.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Animals) != 0) {
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.AnimalsJobs) {
 						if (current.workSettings.WorkIsActive(workType)) { return current; }
 					}
 				}
-				if ((current.story.CombinedDisabledWorkTags & WorkTags.Violent) != 0) {
+				if ((current.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Violent) != 0) {
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.ViolentJobs) {
 						if (current.workSettings.WorkIsActive(workType)) { return current; }
 					}
 				}
-				if ((current.story.CombinedDisabledWorkTags & WorkTags.Mining) != 0) {
+				if ((current.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Mining) != 0) {
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.MiningJobs) {
 						if (current.workSettings.WorkIsActive(workType)) { return current; }
 					}
 				}
-				if ((current.story.CombinedDisabledWorkTags & WorkTags.Intellectual) != 0) {
+				if ((current.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Intellectual) != 0) {
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.IntellectualJobs) {
 						if (current.workSettings.WorkIsActive(workType)) { return current; }
 					}
 				}
-				if ((current.story.CombinedDisabledWorkTags & WorkTags.Social) != 0) {
+				if ((current.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Social) != 0) {
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.SocialJobs) {
 						if (current.workSettings.WorkIsActive(workType)) { return current; }
 					}
 				}
-				if ((current.story.CombinedDisabledWorkTags & WorkTags.ManualSkilled) != 0) {
+				if ((current.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualSkilled) != 0) {
 					foreach (WorkTypeDef workType in PawnsAreCapable_Initializer.ManualSkilledJobs) {
 						if (workType == WorkTypeDefOf.PlantCutting) { }
 						else if (current.workSettings.WorkIsActive(workType)) { return current; }
@@ -2395,7 +2458,11 @@ namespace PawnsAreCapable {
 		}
 		public override AlertReport GetReport() {
 			foreach (Pawn current in PawnsFinder.AllMaps_FreeColonistsSpawned) {
-				if (current.story.DisabledWorkTypes.Contains(WorkTypeDefOf.Hunting)
+				if (
+                    
+                    ((current.story.DisabledWorkTagsBackstoryAndTraits & WorkTypeDefOf.Hunting.workTags) > 0)
+
+
 				  && ((current.equipment.Primary != null) && WeaponCheck.HasWeapon(current))) {
 					return current;
 				}
