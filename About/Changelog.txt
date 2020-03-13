@@ -1,6 +1,8 @@
 ---------------------------------------------------------------------------------
   Changelog for "Pawns are Capable!"
 ---------------------------------------------------------------------------------
+- 2020-03-13
+    - Updated to 1.1
 
 - 12/08/2018
 	- PAC should now once again work just fine in conjunction with Fluffy's "Work

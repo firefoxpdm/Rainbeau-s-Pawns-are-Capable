@@ -4,6 +4,7 @@
 	<HediffDef>
 		<defName>AssignedToArt</defName>
 		<label>assigned to art</label>
+		<description>no clue...</description>
 		<hediffClass>PawnsAreCapable.Hediff_AssignedToArt</hediffClass>
 		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
 		<initialSeverity>0.01</initialSeverity>
