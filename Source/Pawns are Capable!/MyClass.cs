@@ -130,11 +130,11 @@ namespace PawnsAreCapable {
 			Scribe_Values.Look(ref allowFDJ, "allowFDJ", true);
 		}
 	}
-	
-	// ------------------------------------- //
-	// ---------- HARMONY PATCHES ---------- //
-	// ------------------------------------- //
 
+    // ------------------------------------- //
+    // ---------- HARMONY PATCHES ---------- //
+    // ------------------------------------- //
+    
 	[HarmonyPatch(typeof(CharacterCardUtility), "DrawCharacterCard", new Type[] { typeof(Rect), typeof(Pawn), typeof(Action), typeof(Rect) })]
 	public static class CharacterCardUtility_DrawCharacterCard {
 		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) {
@@ -178,6 +178,8 @@ namespace PawnsAreCapable {
 		}
 	}
 	
+
+        
 	[HarmonyPatch(typeof(FloatMenuMakerMap), "ChoicesAtFor", null)]
 	public static class FloatMenuMakerMap_ChoicesAtFor {
 		[HarmonyPriority(Priority.VeryLow)]
@@ -202,7 +204,8 @@ namespace PawnsAreCapable {
 			}
 		}
 	}
-
+    
+    
 	[HarmonyPatch(typeof(FloatMenuUtility), "GetMeleeAttackAction", null)]
 	public static class FloatMenuUtility_GetMeleeAttackAction {
 		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) {
@@ -217,6 +220,7 @@ namespace PawnsAreCapable {
 		}
 	}
 	
+    
 	[HarmonyPatch(typeof(GameInitData), "PrepForMapGen", null)]
 	public static class GameInitData_PrepForMapGen {
 		private static void Postfix(ref GameInitData __instance) {
@@ -227,52 +231,53 @@ namespace PawnsAreCapable {
 			}
 		}
 	}
-	
-	[HarmonyPatch(typeof(PawnGenerator), "GenerateSkills", null)]
-	public static class PawnGenerator_GenerateSkills {
-		private static void Postfix(Pawn pawn) {
-			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Animals) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Animals).passion = Passion.None;
-			}
-			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Artistic) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Artistic).passion = Passion.None;
-			}
-			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Caring) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Medicine).passion = Passion.None;
-			}
-			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Cooking) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Cooking).passion = Passion.None;
-			}
-			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Crafting) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Crafting).passion = Passion.None;
-			}
-			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Intellectual) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Intellectual).passion = Passion.None;
-			}
-			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualSkilled) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Construction).passion = Passion.None;
-				pawn.skills.GetSkill(SkillDefOf.Cooking).passion = Passion.None;
-				pawn.skills.GetSkill(SkillDefOf.Crafting).passion = Passion.None;
-				pawn.skills.GetSkill(SkillDefOf.Plants).passion = Passion.None;
-				pawn.skills.GetSkill(SkillDefOf.Mining).passion = Passion.None;
-			}
-			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Mining) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Mining).passion = Passion.None;
-			}
-			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.PlantWork) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Plants).passion = Passion.None;
-			}
-			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Social) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Social).passion = Passion.None;
-			}
-			if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Violent) != 0) {
-				pawn.skills.GetSkill(SkillDefOf.Melee).passion = Passion.None;
-				pawn.skills.GetSkill(SkillDefOf.Shooting).passion = Passion.None;
-			}
-		}
-	}
-		
-	[HarmonyPatch(typeof(Pawn), "OneOfWorkTypesIsDisabled", null)]
+
+    
+[HarmonyPatch(typeof(PawnGenerator), "GenerateSkills", null)]
+public static class PawnGenerator_GenerateSkills {
+    private static void Postfix(Pawn pawn) {
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Animals) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Animals).passion = Passion.None;
+        }
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Artistic) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Artistic).passion = Passion.None;
+        }
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Caring) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Medicine).passion = Passion.None;
+        }
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Cooking) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Cooking).passion = Passion.None;
+        }
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Crafting) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Crafting).passion = Passion.None;
+        }
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Intellectual) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Intellectual).passion = Passion.None;
+        }
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.ManualSkilled) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Construction).passion = Passion.None;
+            pawn.skills.GetSkill(SkillDefOf.Cooking).passion = Passion.None;
+            pawn.skills.GetSkill(SkillDefOf.Crafting).passion = Passion.None;
+            pawn.skills.GetSkill(SkillDefOf.Plants).passion = Passion.None;
+            pawn.skills.GetSkill(SkillDefOf.Mining).passion = Passion.None;
+        }
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Mining) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Mining).passion = Passion.None;
+        }
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.PlantWork) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Plants).passion = Passion.None;
+        }
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Social) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Social).passion = Passion.None;
+        }
+        if ((pawn.story.DisabledWorkTagsBackstoryAndTraits & WorkTags.Violent) != 0) {
+            pawn.skills.GetSkill(SkillDefOf.Melee).passion = Passion.None;
+            pawn.skills.GetSkill(SkillDefOf.Shooting).passion = Passion.None;
+        }
+    }
+}
+    
+    [HarmonyPatch(typeof(Pawn), "OneOfWorkTypesIsDisabled", null)]
 	public static class Pawn_OneOfWorkTypesIsDisabled {
 		public static bool Prefix(List<WorkTypeDef> wts, ref Pawn __instance, ref bool __result) {
 			Pawn pawn = __instance;
@@ -287,23 +292,33 @@ namespace PawnsAreCapable {
 		}
 	}
 
-	[HarmonyPatch(typeof(Pawn), "WorkTagIsDisabled",  null)]
-	public static class Pawn_WorkTagIsDisabled {
-		public static bool Prefix(WorkTags w, ref Pawn __instance, ref bool __result) {
-			Pawn pawn = __instance;
-			if (w == WorkTags.Violent) {
-				if ((pawn.equipment.Primary != null) && WeaponCheck.HasWeapon(pawn)) {
-					__result = false;
-					return false;
-				}
-				return true;
-			}
-			__result = false;
-			return false;
-		}
-	}
-		
-	[HarmonyPatch(typeof(Pawn), "WorkTypeIsDisabled",  null)]
+
+    [HarmonyPatch(typeof(Pawn), "WorkTagIsDisabled", null)]
+    public static class Pawn_WorkTagIsDisabled
+    {
+        public static bool Prefix(WorkTags w, ref Pawn __instance, ref bool __result)
+        {
+            Pawn pawn = __instance;
+            if (w == WorkTags.Violent)
+            {
+                if (pawn.equipment == null)
+                {
+                    return true;
+                }
+
+                if ((pawn.equipment.Primary != null) && WeaponCheck.HasWeapon(pawn))
+                {
+                    __result = false;
+                    return false;
+                }
+                return true;
+            }
+            __result = false;
+            return false;
+        }
+    }
+	
+    [HarmonyPatch(typeof(Pawn), "WorkTypeIsDisabled",  null)]
 	public static class Pawn_WorkTypeIsDisabled {
 		public static bool Prefix(ref bool __result) {
 			__result = false;
@@ -327,7 +342,7 @@ namespace PawnsAreCapable {
 			return false;
 		}
 	}
-
+    
 	[HarmonyPatch(typeof(WidgetsWork), "DrawWorkBoxBackground", null)]
 	public static class WidgetsWork_DrawWorkBoxBackground {
 		private static bool Prefix(Rect rect, Pawn p, WorkTypeDef workDef) {
@@ -472,8 +487,8 @@ namespace PawnsAreCapable {
 			return false;
 		}
 	}
-	
-	[HarmonyPatch(typeof(WidgetsWork), "TipForPawnWorker", new Type[] { typeof(Pawn), typeof(WorkTypeDef), typeof(bool) })]
+    
+    [HarmonyPatch(typeof(WidgetsWork), "TipForPawnWorker", new Type[] { typeof(Pawn), typeof(WorkTypeDef), typeof(bool) })]
 	public static class WidgetsWork_TipForPawnWorker {
 		public static bool Prefix(Pawn p, WorkTypeDef wDef, bool incapableBecauseOfCapacities, ref string __result) {
 			StringBuilder stringBuilder = new StringBuilder();
@@ -486,7 +501,7 @@ namespace PawnsAreCapable {
 			return true;
 		}
 	}
-
+    
 	[HarmonyPatch(typeof(WITab_Caravan_Gear), "TryEquipDraggedItem", null)]
 	public static class WITab_Caravan_Gear_TryEquipDraggedItem {
 		static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions) {
