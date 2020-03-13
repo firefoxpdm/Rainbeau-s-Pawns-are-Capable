@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+    <AssignedToArt.stages.0.label>예술 작업에 할당됨</AssignedToArt.stages.0.label>
+    <AssignedToArt.stages.0.description>난 예술이 싫어.</AssignedToArt.stages.0.description>
+    <AssignedToArt.stages.1.label>예술 작업에 할당됨 (6 시간 경과)</AssignedToArt.stages.1.label>
+    <AssignedToArt.stages.1.description>난 예술이 정말 싫어.</AssignedToArt.stages.1.description>
+    <AssignedToArt.stages.2.label>예술 작업에 할당됨 (12 시간 경과)</AssignedToArt.stages.2.label>
+    <AssignedToArt.stages.2.description>난 예술이 정말정말 싫어!</AssignedToArt.stages.2.description>
+    <AssignedToArt.stages.3.label>예술 작업에 할당됨 (24 시간 경과)</AssignedToArt.stages.3.label>
+    <AssignedToArt.stages.3.description>내가 아직도 조각 같은걸 하고 있다니 믿을 수 없어!</AssignedToArt.stages.3.description>
+    <AssignedToArt.stages.4.label>예술 작업에 할당됨 (48 시간 경과)</AssignedToArt.stages.4.label>
+    <AssignedToArt.stages.4.description>만약 내가 1분이라도 예술을 더 해야한다면, 난 미쳐 버릴꺼야!</AssignedToArt.stages.4.description>
+    <AssignedToArt.stages.5.label>예술 작업에 할당됨</AssignedToArt.stages.5.label>
+    <AssignedToArt.stages.5.description>나는 여전히 내가 예술에 배정되어 있다는 것에 화가 나.</AssignedToArt.stages.5.description>
+
+    <AssignedToCleaning.stages.0.label>청소 작업에 할당됨</AssignedToCleaning.stages.0.label>
+    <AssignedToCleaning.stages.0.description>난 청소가 싫어.</AssignedToCleaning.stages.0.description>
+    <AssignedToCleaning.stages.1.label>청소 작업에 할당됨</AssignedToCleaning.stages.1.label>
+    <AssignedToCleaning.stages.1.description>나는 여전히 내가 청소에 배정되어 있다는 것에 화가 나.</AssignedToCleaning.stages.1.description>
+
+    <AssignedToConstruction.stages.0.label>건설 작업에 할당됨</AssignedToConstruction.stages.0.label>
+    <AssignedToConstruction.stages.0.description>난 건설이 싫어.</AssignedToConstruction.stages.0.description>
+    <AssignedToConstruction.stages.1.label>건설 작업에 할당됨 (6 시간 경과)</AssignedToConstruction.stages.1.label>
+    <AssignedToConstruction.stages.1.description>난 건설이 정말 싫어.</AssignedToConstruction.stages.1.description>
+    <AssignedToConstruction.stages.2.label>건설 작업에 할당됨 (12 시간 경과)</AssignedToConstruction.stages.2.label>
+    <AssignedToConstruction.stages.2.description>난 건설이 정말정말 싫어!</AssignedToConstruction.stages.2.description>
+    <AssignedToConstruction.stages.3.label>건설 작업에 할당됨 (24 시간 경과)</AssignedToConstruction.stages.3.label>
+    <AssignedToConstruction.stages.3.description>내가 아직도 망치질이나 하고 있다니 믿을 수 없어!</AssignedToConstruction.stages.3.description>
+    <AssignedToConstruction.stages.4.label>건설 작업에 할당됨 (48 시간 경과)</AssignedToConstruction.stages.4.label>
+    <AssignedToConstruction.stages.4.description>만약 내가 1분이라도 건설을 더 해야한다면, 난 미쳐 버릴꺼야!</AssignedToConstruction.stages.4.description>
+    <AssignedToConstruction.stages.5.label>건설 작업에 할당됨</AssignedToConstruction.stages.5.label>
+    <AssignedToConstruction.stages.5.description>나는 여전히 내가 건설에 배정되어 있다는 것에 화가 나.</AssignedToConstruction.stages.5.description>
+
+    <AssignedToCooking.stages.0.label>요리 작업에 할당됨</AssignedToCooking.stages.0.label>
+    <AssignedToCooking.stages.0.description>난 요리가 싫어.</AssignedToCooking.stages.0.description>
+    <AssignedToCooking.stages.1.label>요리 작업에 할당됨 (6 시간 경과)</AssignedToCooking.stages.1.label>
+    <AssignedToCooking.stages.1.description>난 요리가 정말 싫어.</AssignedToCooking.stages.1.description>
+    <AssignedToCooking.stages.2.label>요리 작업에 할당됨 (12 시간 경과)</AssignedToCooking.stages.2.label>
+    <AssignedToCooking.stages.2.description>난 요리가 정말정말 싫어!</AssignedToCooking.stages.2.description>
+    <AssignedToCooking.stages.3.label>요리 작업에 할당됨 (24 시간 경과)</AssignedToCooking.stages.3.label>
+    <AssignedToCooking.stages.3.description>내가 아직도 음식이나 만들고 있다니 믿을 수 없어!</AssignedToCooking.stages.3.description>
+    <AssignedToCooking.stages.4.label>요리 작업에 할당됨 (48 시간 경과)</AssignedToCooking.stages.4.label>
+    <AssignedToCooking.stages.4.description>만약 내가 1분이라도 요리를 더 해야한다면, 난 미쳐 버릴꺼야!</AssignedToCooking.stages.4.description>
+    <AssignedToCooking.stages.5.label>요리 작업에 할당됨</AssignedToCooking.stages.5.label>
+    <AssignedToCooking.stages.5.description>나는 여전히 내가 요리에 배정되어 있다는 것에 화가 나.</AssignedToCooking.stages.5.description>
+
+    <AssignedToCrafting.stages.0.label>제작 작업에 할당됨</AssignedToCrafting.stages.0.label>
+    <AssignedToCrafting.stages.0.description>난 제작이 싫어.</AssignedToCrafting.stages.0.description>
+    <AssignedToCrafting.stages.1.label>제작 작업에 할당됨 (6 시간 경과)</AssignedToCrafting.stages.1.label>
+    <AssignedToCrafting.stages.1.description>난 제작이 정말 싫어</AssignedToCrafting.stages.1.description>
+    <AssignedToCrafting.stages.2.label>제작 작업에 할당됨 (12 시간 경과)</AssignedToCrafting.stages.2.label>
+    <AssignedToCrafting.stages.2.description>난 제작이 정말정말 싫어!</AssignedToCrafting.stages.2.description>
+    <AssignedToCrafting.stages.3.label>제작 작업에 할당됨 (24 시간 경과)</AssignedToCrafting.stages.3.label>
+    <AssignedToCrafting.stages.3.description>내가 아직도 물건이나 만들고 있다니 믿을 수 없어!</AssignedToCrafting.stages.3.description>
+    <AssignedToCrafting.stages.4.label>제작 작업에 할당됨 (48 시간 경과)</AssignedToCrafting.stages.4.label>
+    <AssignedToCrafting.stages.4.description>만약 내가 1분이라도 제작을 더 해야한다면, 난 미쳐 버릴꺼야!</AssignedToCrafting.stages.4.description>
+    <AssignedToCrafting.stages.5.label>제작 작업에 할당됨</AssignedToCrafting.stages.5.label>
+    <AssignedToCrafting.stages.5.description>나는 여전히 내가 제작에 배정되어 있다는 것에 화가 나.</AssignedToCrafting.stages.5.description>
+
+    <AssignedToDoctor.stages.0.label>치료 작업에 할당됨</AssignedToDoctor.stages.0.label>
+    <AssignedToDoctor.stages.0.description>난 치료가 싫어.</AssignedToDoctor.stages.0.description>
+    <AssignedToDoctor.stages.1.label>치료 작업에 할당됨 (6 시간 경과)</AssignedToDoctor.stages.1.label>
+    <AssignedToDoctor.stages.1.description>난 치료가 정말 싫어</AssignedToDoctor.stages.1.description>
+    <AssignedToDoctor.stages.2.label>치료 작업에 할당됨 (12 시간 경과)</AssignedToDoctor.stages.2.label>
+    <AssignedToDoctor.stages.2.description>난 치료가 정말정말 싫어!</AssignedToDoctor.stages.2.description>
+    <AssignedToDoctor.stages.3.label>치료 작업에 할당됨 (24 시간 경과)</AssignedToDoctor.stages.3.label>
+    <AssignedToDoctor.stages.3.description>내가 아직도 치료나 하고 있다니 믿을 수 없어!</AssignedToDoctor.stages.3.description>
+    <AssignedToDoctor.stages.4.label>치료 작업에 할당됨 (48 시간 경과)</AssignedToDoctor.stages.4.label>
+    <AssignedToDoctor.stages.4.description>만약 내가 1분이라도 치료를 더 해야한다면, 난 미쳐 버릴꺼야!</AssignedToDoctor.stages.4.description>
+    <AssignedToDoctor.stages.5.label>치료 작업에 할당됨</AssignedToDoctor.stages.5.label>
+    <AssignedToDoctor.stages.5.description>나는 여전히 내가 치료에 배정되어 있다는 것에 화가 나.</AssignedToDoctor.stages.5.description>
+
+    <AssignedToFirefighter.stages.0.label>소방 작업에 할당됨</AssignedToFirefighter.stages.0.label>
+    <AssignedToFirefighter.stages.0.description>난 소방이 싫어.</AssignedToFirefighter.stages.0.description>
+    <AssignedToFirefighter.stages.1.label>소방 작업에 할당됨 (6 시간 경과)</AssignedToFirefighter.stages.1.label>
+    <AssignedToFirefighter.stages.1.description>난 소방이 정말 싫어.</AssignedToFirefighter.stages.1.description>
+    <AssignedToFirefighter.stages.2.label>소방 작업에 할당됨 (12 시간 경과)</AssignedToFirefighter.stages.2.label>
+    <AssignedToFirefighter.stages.2.description>난 소방이 정말정말 싫어!</AssignedToFirefighter.stages.2.description>
+    <AssignedToFirefighter.stages.3.label>소방 작업에 할당됨 (24 시간 경과)</AssignedToFirefighter.stages.3.label>
+    <AssignedToFirefighter.stages.3.description>내가 아직도 불이나 끄고 있다니 믿을 수 없어!</AssignedToFirefighter.stages.3.description>
+    <AssignedToFirefighter.stages.4.label>소방 작업에 할당됨 (48 시간 경과)</AssignedToFirefighter.stages.4.label>
+    <AssignedToFirefighter.stages.4.description>만약 내가 1분이라도 소방을 더 해야한다면, 난 미쳐 버릴꺼야!</AssignedToFirefighter.stages.4.description>
+    <AssignedToFirefighter.stages.5.label>소방 작업에 할당됨</AssignedToFirefighter.stages.5.label>
+    <AssignedToFirefighter.stages.5.description>나는 여전히 내가 소방에 배정되어 있다는 것에 화가 나.</AssignedToFirefighter.stages.5.description>
+
+    <AssignedToGrowing.stages.0.label>재배 작업에 할당됨</AssignedToGrowing.stages.0.label>
+    <AssignedToGrowing.stages.0.description>난 재배가 싫어.</AssignedToGrowing.stages.0.description>
+    <AssignedToGrowing.stages.1.label>재배 작업에 할당됨 (6 시간 경과)</AssignedToGrowing.stages.1.label>
+    <AssignedToGrowing.stages.1.description>난 재배가 정말 싫어.</AssignedToGrowing.stages.1.description>
+    <AssignedToGrowing.stages.2.label>재배 작업에 할당됨 (12 시간 경과)</AssignedToGrowing.stages.2.label>
+    <AssignedToGrowing.stages.2.description>난 재배가 정말정말 싫어!</AssignedToGrowing.stages.2.description>
+    <AssignedToGrowing.stages.3.label>재배 작업에 할당됨 (24 시간 경과)</AssignedToGrowing.stages.3.label>
+    <AssignedToGrowing.stages.3.description>내가 아직도 작물 이나 심고 있다니 믿을 수 없어!</AssignedToGrowing.stages.3.description>
+    <AssignedToGrowing.stages.4.label>재배 작업에 할당됨 (48 시간 경과)</AssignedToGrowing.stages.4.label>
+    <AssignedToGrowing.stages.4.description>만약 내가 1분이라도 재배를 더 해야한다면, 난 미쳐 버릴꺼야!</AssignedToGrowing.stages.4.description>
+    <AssignedToGrowing.stages.5.label>재배 작업에 할당됨</AssignedToGrowing.stages.5.label>
+    <AssignedToGrowing.stages.5.description>나는 여전히 내가 재배에 배정되어 있다는 것에 화가 나.</AssignedToGrowing.stages.5.description>
+
+    <AssignedToHandling.stages.0.label>조련 작업에 할당됨</AssignedToHandling.stages.0.label>
+    <AssignedToHandling.stages.0.description>난 조련이 싫어.</AssignedToHandling.stages.0.description>
+    <AssignedToHandling.stages.1.label>조련 작업에 할당됨 (6 시간 경과)</AssignedToHandling.stages.1.label>
+    <AssignedToHandling.stages.1.description>난 조련이 정말 싫어.</AssignedToHandling.stages.1.description>
+    <AssignedToHandling.stages.2.label>조련 작업에 할당됨 (12 시간 경과)</AssignedToHandling.stages.2.label>
+    <AssignedToHandling.stages.2.description>난 조련이 정말정말 싫어!</AssignedToHandling.stages.2.description>
+    <AssignedToHandling.stages.3.label>조련 작업에 할당됨 (24 시간 경과)</AssignedToHandling.stages.3.label>
+    <AssignedToHandling.stages.3.description>내가 아직도 동물 이나 길들이고 있다니 믿을 수 없어!</AssignedToHandling.stages.3.description>
+    <AssignedToHandling.stages.4.label>조련 작업에 할당됨 (48 시간 경과)</AssignedToHandling.stages.4.label>
+    <AssignedToHandling.stages.4.description>만약 내가 1분이라도 조련을 더 해야한다면, 난 미쳐 버릴꺼야!</AssignedToHandling.stages.4.description>
+    <AssignedToHandling.stages.5.label>조련 작업에 할당됨</AssignedToHandling.stages.5.label>
+    <AssignedToHandling.stages.5.description>나는 여전히 내가 조련에 배정되어 있다는 것에 화가 나.</AssignedToHandling.stages.5.description>
+
+    <AssignedToHauling.stages.0.label>운반 작업에 할당됨</AssignedToHauling.stages.0.label>
+    <AssignedToHauling.stages.0.description>난 운반이 싫어.</AssignedToHauling.stages.0.description>
+    <AssignedToHauling.stages.1.label>운반 작업에 할당됨</AssignedToHauling.stages.1.label>
+    <AssignedToHauling.stages.1.description>나는 여전히 내가 운반에 배정되어 있다는 것에 화가 나.</AssignedToHauling.stages.1.description>
+
+    <AssignedToHunting.stages.0.label>사냥 작업에 할당됨</AssignedToHunting.stages.0.label>
+    <AssignedToHunting.stages.0.description>난 사냥이 싫어.</AssignedToHunting.stages.0.description>
+    <AssignedToHunting.stages.1.label>사냥 작업에 할당됨 (6 시간 경과)</AssignedToHunting.stages.1.label>
+    <AssignedToHunting.stages.1.description>난 사냥이 정말 싫어.</AssignedToHunting.stages.1.description>
+    <AssignedToHunting.stages.2.label>사냥 작업에 할당됨 (12 시간 경과)</AssignedToHunting.stages.2.label>
+    <AssignedToHunting.stages.2.description>난 사냥이 정말정말 싫어!</AssignedToHunting.stages.2.description>
+    <AssignedToHunting.stages.3.label>사냥 작업에 할당됨 (24 시간 경과)</AssignedToHunting.stages.3.label>
+    <AssignedToHunting.stages.3.description>내가 아직도 동물 이나 잡고 있다니 믿을 수 없어!</AssignedToHunting.stages.3.description>
+    <AssignedToHunting.stages.4.label>사냥 작업에 할당됨 (48 시간 경과)</AssignedToHunting.stages.4.label>
+    <AssignedToHunting.stages.4.description>만약 내가 1분이라도 사냥을 더 해야한다면, 난 미쳐 버릴꺼야!</AssignedToHunting.stages.4.description>
+    <AssignedToHunting.stages.5.label>사냥 작업에 할당됨</AssignedToHunting.stages.5.label>
+    <AssignedToHunting.stages.5.description>나는 여전히 내가 사냥에 배정되어 있다는 것에 화가 나.</AssignedToHunting.stages.5.description>
+
+    <AssignedToMining.stages.0.label>채굴 작업에 할당됨</AssignedToMining.stages.0.label>
+    <AssignedToMining.stages.0.description>난 채굴이 싫어.</AssignedToMining.stages.0.description>
+    <AssignedToMining.stages.1.label>채굴 작업에 할당됨 (6 시간 경과)</AssignedToMining.stages.1.label>
+    <AssignedToMining.stages.1.description>난 채굴이 정말 싫어.</AssignedToMining.stages.1.description>
+    <AssignedToMining.stages.2.label>채굴 작업에 할당됨 (12 시간 경과)</AssignedToMining.stages.2.label>
+    <AssignedToMining.stages.2.description>난 채굴이 정말정말 싫어!</AssignedToMining.stages.2.description>
+    <AssignedToMining.stages.3.label>채굴 작업에 할당됨 (24 시간 경과)</AssignedToMining.stages.3.label>
+    <AssignedToMining.stages.3.description>내가 아직도 광물이나 캐고 있다니 믿을 수 없어!</AssignedToMining.stages.3.description>
+    <AssignedToMining.stages.4.label>채굴 작업에 할당됨 (48 시간 경과)</AssignedToMining.stages.4.label>
+    <AssignedToMining.stages.4.description>만약 내가 1분이라도 채굴을 더 해야한다면, 난 미쳐 버릴꺼야!</AssignedToMining.stages.4.description>
+    <AssignedToMining.stages.5.label>채굴 작업에 할당됨</AssignedToMining.stages.5.label>
+    <AssignedToMining.stages.5.description>나는 여전히 내가 채굴에 배정되어 있다는 것에 화가 나.</AssignedToMining.stages.5.description>
+
+    <AssignedToPlantCutting.stages.0.label>제초 작업에 할당됨</AssignedToPlantCutting.stages.0.label>
+    <AssignedToPlantCutting.stages.0.description>난 제초가 싫어.</AssignedToPlantCutting.stages.0.description>
+     <AssignedToPlantCutting.stages.1.label>제초 작업에 할당됨</AssignedToPlantCutting.stages.1.label>
+    <AssignedToPlantCutting.stages.1.description>나는 여전히 내가 제초에 배정되어 있다는 것에 화가 나.</AssignedToPlantCutting.stages.1.description>
+
+    <AssignedToResearch.stages.0.label>연구 작업에 할당됨</AssignedToResearch.stages.0.label>
+    <AssignedToResearch.stages.0.description>난 연구가 싫어.</AssignedToResearch.stages.0.description>
+    <AssignedToResearch.stages.1.label>연구 작업에 할당됨 (6 시간 경과)</AssignedToResearch.stages.1.label>
+    <AssignedToResearch.stages.1.description>난 연구가 정말 싫어.</AssignedToResearch.stages.1.description>
+    <AssignedToResearch.stages.2.label>연구 작업에 할당됨 (12 시간 경과)</AssignedToResearch.stages.2.label>
+    <AssignedToResearch.stages.2.description>난 연구가 정말정말 싫어!</AssignedToResearch.stages.2.description>
+    <AssignedToResearch.stages.3.label>연구 작업에 할당됨 (24 시간 경과)</AssignedToResearch.stages.3.label>
+    <AssignedToResearch.stages.3.description>내가 아직도 연구대나 들여다 보고 있다니 믿을 수 없어!</AssignedToResearch.stages.3.description>
+    <AssignedToResearch.stages.4.label>연구 작업에 할당됨 (48 시간 경과)</AssignedToResearch.stages.4.label>
+    <AssignedToResearch.stages.4.description>만약 내가 1분이라도 연구를 더 해야한다면, 난 미쳐 버릴꺼야!</AssignedToResearch.stages.4.description>
+    <AssignedToResearch.stages.5.label>연구 작업에 할당됨</AssignedToResearch.stages.5.label>
+    <AssignedToResearch.stages.5.description>나는 여전히 내가 연구에 배정되어 있다는 것에 화가 나.</AssignedToResearch.stages.5.description>
+
+    <AssignedToSmithing.stages.0.label>제련 작업에 할당됨</AssignedToSmithing.stages.0.label>
+    <AssignedToSmithing.stages.0.description>난 제련이 싫어.</AssignedToSmithing.stages.0.description>
+    <AssignedToSmithing.stages.1.label>제련 작업에 할당됨 (6 시간 경과)</AssignedToSmithing.stages.1.label>
+    <AssignedToSmithing.stages.1.description>난 제련이 정말 싫어.</AssignedToSmithing.stages.1.description>
+    <AssignedToSmithing.stages.2.label>제련 작업에 할당됨 (12 시간 경과)</AssignedToSmithing.stages.2.label>
+    <AssignedToSmithing.stages.2.description>난 제련이 정말정말 싫어!</AssignedToSmithing.stages.2.description>
+    <AssignedToSmithing.stages.3.label>제련 작업에 할당됨 (24 시간 경과)</AssignedToSmithing.stages.3.label>
+    <AssignedToSmithing.stages.3.description>내가 아직도 무기나 만들고 있다니 믿을 수 없어!</AssignedToSmithing.stages.3.description>
+    <AssignedToSmithing.stages.4.label>제련 작업에 할당됨 (48 시간 경과)</AssignedToSmithing.stages.4.label>
+    <AssignedToSmithing.stages.4.description>만약 내가 1분이라도 제련을 더 해야한다면, 난 미쳐 버릴꺼야!</AssignedToSmithing.stages.4.description>
+    <AssignedToSmithing.stages.5.label>제련 작업에 할당됨</AssignedToSmithing.stages.5.label>
+    <AssignedToSmithing.stages.5.description>나는 여전히 내가 제련에 배정되어 있다는 것에 화가 나.</AssignedToSmithing.stages.5.description>
+
+    <AssignedToTailoring.stages.0.label>재봉 작업에 할당됨</AssignedToTailoring.stages.0.label>
+    <AssignedToTailoring.stages.0.description>난 재봉이 싫어.</AssignedToTailoring.stages.0.description>
+    <AssignedToTailoring.stages.1.label>재봉 작업에 할당됨 (6 시간 경과)</AssignedToTailoring.stages.1.label>
+    <AssignedToTailoring.stages.1.description>난 재봉이 정말 싫어.</AssignedToTailoring.stages.1.description>
+    <AssignedToTailoring.stages.2.label>재봉 작업에 할당됨 (12 시간 경과)</AssignedToTailoring.stages.2.label>
+    <AssignedToTailoring.stages.2.description>난 재봉이 정말정말 싫어!</AssignedToTailoring.stages.2.description>
+    <AssignedToTailoring.stages.3.label>재봉 작업에 할당됨 (24 시간 경과)</AssignedToTailoring.stages.3.label>
+    <AssignedToTailoring.stages.3.description>내가 아직도 옷이나 만들고 있다니 믿을 수 없어!</AssignedToTailoring.stages.3.description>
+    <AssignedToTailoring.stages.4.label>재봉 작업에 할당됨 (48 시간 경과)</AssignedToTailoring.stages.4.label>
+    <AssignedToTailoring.stages.4.description>만약 내가 1분이라도 재봉을 더 해야한다면, 난 미쳐 버릴꺼야!</AssignedToTailoring.stages.4.description>
+    <AssignedToTailoring.stages.5.label>재봉 작업에 할당됨</AssignedToTailoring.stages.5.label>
+    <AssignedToTailoring.stages.5.description>나는 여전히 내가 재봉에 배정되어 있다는 것에 화가 나.</AssignedToTailoring.stages.5.description>
+
+    <AssignedToWarden.stages.0.label>간수 작업에 할당됨</AssignedToWarden.stages.0.label>
+    <AssignedToWarden.stages.0.description>난 간수가 싫어.</AssignedToWarden.stages.0.description>
+    <AssignedToWarden.stages.1.label>간수 작업에 할당됨 (6 시간 경과)</AssignedToWarden.stages.1.label>
+    <AssignedToWarden.stages.1.description>난 간수가 정말 싫어.</AssignedToWarden.stages.1.description>
+    <AssignedToWarden.stages.2.label>간수 작업에 할당됨 (12 시간 경과)</AssignedToWarden.stages.2.label>
+    <AssignedToWarden.stages.2.description>난 간수가 정말정말 싫어!</AssignedToWarden.stages.2.description>
+    <AssignedToWarden.stages.3.label>간수 작업에 할당됨 (24 시간 경과)</AssignedToWarden.stages.3.label>
+    <AssignedToWarden.stages.3.description>내가 아직도 죄수나 돌보고 있다니 믿을 수 없어!</AssignedToWarden.stages.3.description>
+    <AssignedToWarden.stages.4.label>간수 작업에 할당됨 (48 시간 경과)</AssignedToWarden.stages.4.label>
+    <AssignedToWarden.stages.4.description>만약 내가 1분이라도 간수를 더 해야한다면, 난 미쳐 버릴꺼야!</AssignedToWarden.stages.4.description>
+    <AssignedToWarden.stages.5.label>간수 작업에 할당됨</AssignedToWarden.stages.5.label>
+    <AssignedToWarden.stages.5.description>나는 여전히 내가 간수에 배정되어 있다는 것에 화가 나.</AssignedToWarden.stages.5.description>
+
+    <AssignedAWeapon.stages.0.label>무기 장착중</AssignedAWeapon.stages.0.label>
+    <AssignedAWeapon.stages.0.description>난 무기를 가지고 싶지 않아.</AssignedAWeapon.stages.0.description>
+    <AssignedAWeapon.stages.1.label>무기 장착중 (6 시간 경과)</AssignedAWeapon.stages.1.label>
+    <AssignedAWeapon.stages.1.description>난 무기가 정말 싫어.</AssignedAWeapon.stages.1.description>
+    <AssignedAWeapon.stages.2.label>무기 장착중 (12 시간 경과)</AssignedAWeapon.stages.2.label>
+    <AssignedAWeapon.stages.2.description>제발 이 역겨운 것좀 내려놓게 해줘!</AssignedAWeapon.stages.2.description>
+    <AssignedAWeapon.stages.3.label>무기 장착중 (24 시간 경과)</AssignedAWeapon.stages.3.label>
+    <AssignedAWeapon.stages.3.description>내가 이런 끔찍한 것을 들고 있다니 믿을 수 없어!</AssignedAWeapon.stages.3.description>
+    <AssignedAWeapon.stages.4.label>무기 장착중 (48 시간 경과)</AssignedAWeapon.stages.4.label>
+    <AssignedAWeapon.stages.4.description>단 1분이라도 더 무기를 가지고 있어야 한다면, 다 죽여버릴꺼야! (그래 좀 아이러니 하지, 그냥 그러려니 해!)</AssignedAWeapon.stages.4.description>
+    <AssignedAWeapon.stages.5.label>무시 장착중</AssignedAWeapon.stages.5.label>
+    <AssignedAWeapon.stages.5.description>나는 여전히 무기를 장착중인 것에 화가 나.</AssignedAWeapon.stages.5.description>
+
+</LanguageData>

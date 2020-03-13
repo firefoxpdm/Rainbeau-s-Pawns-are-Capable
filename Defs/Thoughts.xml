@@ -1,0 +1,646 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThoughtDef>
+		<defName>AssignedToArt</defName>
+		<workerClass>PawnsAreCapable.ThoughtWorker_AssignedToArt</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>assigned to art</label>
+				<description>I hate art.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to art (6 hours)</label>
+				<description>I really hate art.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to art (12 hours)</label>
+				<description>I really, really hate art!</description>
+				<baseMoodEffect>-20</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to art (24 hours)</label>
+				<description>I can't believe I'm still assigned to art!</description>
+				<baseMoodEffect>-35</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to art (48 hours)</label>
+				<description>If I'm assigned to art for one more minute, I swear I'm going to lose it!</description>
+				<baseMoodEffect>-50</baseMoodEffect>
+			</li>
+			<li>
+				<label>was assigned to art</label>
+				<description>I'm still annoyed that I was assigned to art.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>AssignedToCleaning</defName>
+		<workerClass>PawnsAreCapable.ThoughtWorker_AssignedToCleaning</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>assigned to cleaning</label>
+				<description>I hate cleaning.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>was assigned to cleaning</label>
+				<description>I'm still annoyed that I was assigned to cleaning.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>AssignedToConstruction</defName>
+		<workerClass>PawnsAreCapable.ThoughtWorker_AssignedToConstruction</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>assigned to construction</label>
+				<description>I hate construction.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to construction (6 hours)</label>
+				<description>I really hate construction.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to construction (12 hours)</label>
+				<description>I really, really hate construction!</description>
+				<baseMoodEffect>-20</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to construction (24 hours)</label>
+				<description>I can't believe I'm still assigned to construction!</description>
+				<baseMoodEffect>-35</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to construction (48 hours)</label>
+				<description>If I'm assigned to construction for one more minute, I swear I'm going to lose it!</description>
+				<baseMoodEffect>-50</baseMoodEffect>
+			</li>
+			<li>
+				<label>was assigned to construction</label>
+				<description>I'm still annoyed that I was assigned to construction.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>AssignedToCooking</defName>
+		<workerClass>PawnsAreCapable.ThoughtWorker_AssignedToCooking</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>assigned to cooking</label>
+				<description>I hate cooking.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to cooking (6 hours)</label>
+				<description>I really hate cooking.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to cooking (12 hours)</label>
+				<description>I really, really hate cooking!</description>
+				<baseMoodEffect>-20</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to cooking (24 hours)</label>
+				<description>I can't believe I'm still assigned to cooking!</description>
+				<baseMoodEffect>-35</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to cooking (48 hours)</label>
+				<description>If I'm assigned to cooking for one more minute, I swear I'm going to lose it!</description>
+				<baseMoodEffect>-50</baseMoodEffect>
+			</li>
+			<li>
+				<label>was assigned to cooking</label>
+				<description>I'm still annoyed that I was assigned to cooking.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>AssignedToCrafting</defName>
+		<workerClass>PawnsAreCapable.ThoughtWorker_AssignedToCrafting</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>assigned to crafting</label>
+				<description>I hate crafting.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to crafting (6 hours)</label>
+				<description>I really hate crafting.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to crafting (12 hours)</label>
+				<description>I really, really hate crafting!</description>
+				<baseMoodEffect>-20</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to crafting (24 hours)</label>
+				<description>I can't believe I'm still assigned to crafting!</description>
+				<baseMoodEffect>-35</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to crafting (48 hours)</label>
+				<description>If I'm assigned to crafting for one more minute, I swear I'm going to lose it!</description>
+				<baseMoodEffect>-50</baseMoodEffect>
+			</li>
+			<li>
+				<label>was assigned to crafting</label>
+				<description>I'm still annoyed that I was assigned to crafting.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>AssignedToDoctor</defName>
+		<workerClass>PawnsAreCapable.ThoughtWorker_AssignedToDoctor</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>assigned to doctor</label>
+				<description>I hate playing doctor.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to doctor (6 hours)</label>
+				<description>I really hate playing doctor.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to doctor (12 hours)</label>
+				<description>I really, really hate playing doctor!</description>
+				<baseMoodEffect>-20</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to doctor (24 hours)</label>
+				<description>I can't believe I'm still assigned to play doctor!</description>
+				<baseMoodEffect>-35</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to doctor (48 hours)</label>
+				<description>If I'm assigned to play doctor for one more minute, I swear I'm going to lose it!</description>
+				<baseMoodEffect>-50</baseMoodEffect>
+			</li>
+			<li>
+				<label>was assigned to doctor</label>
+				<description>I'm still annoyed that I was assigned to play doctor.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>AssignedToFirefighter</defName>
+		<workerClass>PawnsAreCapable.ThoughtWorker_AssignedToFirefighter</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>assigned to firefighter</label>
+				<description>I hate firefighting.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to firefighter (6 hours)</label>
+				<description>I really hate firefighting.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to firefighter (12 hours)</label>
+				<description>I really, really hate firefighting!</description>
+				<baseMoodEffect>-20</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to firefighter (24 hours)</label>
+				<description>I can't believe I'm still assigned to firefighting!</description>
+				<baseMoodEffect>-35</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to firefighter (48 hours)</label>
+				<description>If I'm assigned to firefighting for one more minute, I swear I'm going to lose it!</description>
+				<baseMoodEffect>-50</baseMoodEffect>
+			</li>
+			<li>
+				<label>was assigned to firefighter</label>
+				<description>I'm still annoyed that I was assigned to firefighting.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>AssignedToGrowing</defName>
+		<workerClass>PawnsAreCapable.ThoughtWorker_AssignedToGrowing</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>assigned to growing</label>
+				<description>I hate growing things.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to growing (6 hours)</label>
+				<description>I really hate growing things.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to growing (12 hours)</label>
+				<description>I really, really hate growing things!</description>
+				<baseMoodEffect>-20</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to growing (24 hours)</label>
+				<description>I can't believe I'm still assigned to growing things!</description>
+				<baseMoodEffect>-35</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to growing (48 hours)</label>
+				<description>If I'm assigned to growing things for one more minute, I swear I'm going to lose it!</description>
+				<baseMoodEffect>-50</baseMoodEffect>
+			</li>
+			<li>
+				<label>was assigned to growing</label>
+				<description>I'm still annoyed that I was assigned to growing things.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>AssignedToHandling</defName>
+		<workerClass>PawnsAreCapable.ThoughtWorker_AssignedToHandling</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>assigned to handling</label>
+				<description>I hate animals.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to handling (6 hours)</label>
+				<description>I really hate animals.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to handling (12 hours)</label>
+				<description>I really, really hate animals!</description>
+				<baseMoodEffect>-20</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to handling (24 hours)</label>
+				<description>I can't believe I'm still assigned to handling animals!</description>
+				<baseMoodEffect>-35</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to handling (48 hours)</label>
+				<description>If I'm assigned to handling animals for one more minute, I swear I'm going to lose it!</description>
+				<baseMoodEffect>-50</baseMoodEffect>
+			</li>
+			<li>
+				<label>was assigned to handling</label>
+				<description>I'm still annoyed that I was assigned to handling animals.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>AssignedToHauling</defName>
+		<workerClass>PawnsAreCapable.ThoughtWorker_AssignedToHauling</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>assigned to hauling</label>
+				<description>I hate hauling.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>was assigned to hauling</label>
+				<description>I'm still annoyed that I was assigned to hauling.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>AssignedToHunting</defName>
+		<workerClass>PawnsAreCapable.ThoughtWorker_AssignedToHunting</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>assigned to hunting</label>
+				<description>I hate hunting.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to hunting (6 hours)</label>
+				<description>I really hate hunting.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to hunting (12 hours)</label>
+				<description>I really, really hate hunting!</description>
+				<baseMoodEffect>-20</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to hunting (24 hours)</label>
+				<description>I can't believe I'm still assigned to hunting!</description>
+				<baseMoodEffect>-35</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to hunting (48 hours)</label>
+				<description>If I'm assigned to hunting for one more minute, I swear I'm going to lose it!</description>
+				<baseMoodEffect>-50</baseMoodEffect>
+			</li>
+			<li>
+				<label>was assigned to hunting</label>
+				<description>I'm still annoyed that I was assigned to hunting.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>AssignedToMining</defName>
+		<workerClass>PawnsAreCapable.ThoughtWorker_AssignedToMining</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>assigned to mining</label>
+				<description>I hate mining.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to mining (6 hours)</label>
+				<description>I really hate mining.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to mining (12 hours)</label>
+				<description>I really, really hate mining!</description>
+				<baseMoodEffect>-20</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to mining (24 hours)</label>
+				<description>I can't believe I'm still assigned to mining!</description>
+				<baseMoodEffect>-35</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to mining (48 hours)</label>
+				<description>If I'm assigned to mining for one more minute, I swear I'm going to lose it!</description>
+				<baseMoodEffect>-50</baseMoodEffect>
+			</li>
+			<li>
+				<label>was assigned to mining</label>
+				<description>I'm still annoyed that I was assigned to mining.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>AssignedToPlantCutting</defName>
+		<workerClass>PawnsAreCapable.ThoughtWorker_AssignedToPlantCutting</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>assigned to plant cutting</label>
+				<description>I hate plant cutting.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>was assigned to plant cutting</label>
+				<description>I'm still annoyed that I was assigned to plant cutting.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>AssignedToResearch</defName>
+		<workerClass>PawnsAreCapable.ThoughtWorker_AssignedToResearch</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>assigned to research</label>
+				<description>I hate research.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to research (6 hours)</label>
+				<description>I really hate research.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to research (12 hours)</label>
+				<description>I really, really hate research!</description>
+				<baseMoodEffect>-20</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to research (24 hours)</label>
+				<description>I can't believe I'm still assigned to research!</description>
+				<baseMoodEffect>-35</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to research (48 hours)</label>
+				<description>If I'm assigned to research for one more minute, I swear I'm going to lose it!</description>
+				<baseMoodEffect>-50</baseMoodEffect>
+			</li>
+			<li>
+				<label>was assigned to research</label>
+				<description>I'm still annoyed that I was assigned to research.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>AssignedToSmithing</defName>
+		<workerClass>PawnsAreCapable.ThoughtWorker_AssignedToSmithing</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>assigned to smithing</label>
+				<description>I hate smithing.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to smithing (6 hours)</label>
+				<description>I really hate smithing.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to smithing (12 hours)</label>
+				<description>I really, really hate smithing!</description>
+				<baseMoodEffect>-20</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to smithing (24 hours)</label>
+				<description>I can't believe I'm still assigned to smithing!</description>
+				<baseMoodEffect>-35</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to smithing (48 hours)</label>
+				<description>If I'm assigned to smithing for one more minute, I swear I'm going to lose it!</description>
+				<baseMoodEffect>-50</baseMoodEffect>
+			</li>
+			<li>
+				<label>was assigned to smithing</label>
+				<description>I'm still annoyed that I was assigned to smithing.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>AssignedToTailoring</defName>
+		<workerClass>PawnsAreCapable.ThoughtWorker_AssignedToTailoring</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>assigned to tailoring</label>
+				<description>I hate tailoring.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to tailoring (6 hours)</label>
+				<description>I really hate tailoring.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to tailoring (12 hours)</label>
+				<description>I really, really hate tailoring!</description>
+				<baseMoodEffect>-20</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to tailoring (24 hours)</label>
+				<description>I can't believe I'm still assigned to tailoring!</description>
+				<baseMoodEffect>-35</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to tailoring (48 hours)</label>
+				<description>If I'm assigned to tailoring for one more minute, I swear I'm going to lose it!</description>
+				<baseMoodEffect>-50</baseMoodEffect>
+			</li>
+			<li>
+				<label>was assigned to tailoring</label>
+				<description>I'm still annoyed that I was assigned to tailoring.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>AssignedToWarden</defName>
+		<workerClass>PawnsAreCapable.ThoughtWorker_AssignedToWarden</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>assigned to warden</label>
+				<description>I hate playing warden.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to warden (6 hours)</label>
+				<description>I really hate playing warden.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to warden (12 hours)</label>
+				<description>I really, really hate playing warden!</description>
+				<baseMoodEffect>-20</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to warden (24 hours)</label>
+				<description>I can't believe I'm still assigned to play warden!</description>
+				<baseMoodEffect>-35</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned to warden (48 hours)</label>
+				<description>If I'm assigned to play warden for one more minute, I swear I'm going to lose it!</description>
+				<baseMoodEffect>-50</baseMoodEffect>
+			</li>
+			<li>
+				<label>was assigned to warden</label>
+				<description>I'm still annoyed that I was assigned to play warden.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+	</ThoughtDef>
+	
+	<ThoughtDef>
+		<defName>AssignedAWeapon</defName>
+		<workerClass>PawnsAreCapable.ThoughtWorker_AssignedAWeapon</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>assigned a weapon</label>
+				<description>I hate carrying a weapon.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned a weapon (6 hours)</label>
+				<description>I really hate carrying a weapon.</description>
+				<baseMoodEffect>-10</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned a weapon (12 hours)</label>
+				<description>I really, really hate carrying a weapon!</description>
+				<baseMoodEffect>-20</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned a weapon (24 hours)</label>
+				<description>I can't believe I'm still assigned to carry a weapon!</description>
+				<baseMoodEffect>-35</baseMoodEffect>
+			</li>
+			<li>
+				<label>assigned a weapon (48 hours)</label>
+				<description>If I'm assigned to carry a weapon for one more minute, I swear I'm going to lose it! (Yeah, that's probably a bit ironic, but I don't care!)</description>
+				<baseMoodEffect>-50</baseMoodEffect>
+			</li>
+			<li>
+				<label>was assigned a weapon</label>
+				<description>I'm still annoyed that I was assigned to carry a weapon.</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+		<nullifiedIfNotColonist>true</nullifiedIfNotColonist>
+	</ThoughtDef>
+	
+</Defs>

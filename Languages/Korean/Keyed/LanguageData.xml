@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<PAC.IncapableOf>싫어하는 작업 유형</PAC.IncapableOf>
+	<PAC.CannotDoThisWork>{0} 에게 반갑지 않은 작업입니다.</PAC.CannotDoThisWork>
+
+	<PAC.BadWorkAssignment.Label>좋지않은 작업 할당</PAC.BadWorkAssignment.Label>
+	<PAC.BadWorkAssignment.Explanation>적어도 한명의 정착민이 싫어하는 작업에 할당 되었습니다. 큰 문제는 아닐 수도 있지만, 시간이 지남에 따라 극도로 불행하게 만들 수도 있습니다.</PAC.BadWorkAssignment.Explanation>
+
+	<PAC.AssignedAWeapon.Label>비폭력 정착민 무기 장착</PAC.AssignedAWeapon.Label>
+	<PAC.AssignedAWeapon.Explanation>폭력을 싫어하는 정착민이 무기를 할당 받았습니다. 큰 문제는 아닐 수도 있지만, 시간이 지남에 따라 극도로 불행하게 만들 수도 있습니다.</PAC.AssignedAWeapon.Explanation>
+
+</LanguageData>

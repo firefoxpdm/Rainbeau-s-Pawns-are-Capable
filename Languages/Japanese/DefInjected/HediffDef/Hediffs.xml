@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<AssignedToArt.label>芸術を割り当てられた</AssignedToArt.label>
+	<AssignedToArt.stages.0.label>短時間</AssignedToArt.stages.0.label>
+	<AssignedToArt.stages.1.label>6時間以上</AssignedToArt.stages.1.label>
+	<AssignedToArt.stages.2.label>12時間以上</AssignedToArt.stages.2.label>
+	<AssignedToArt.stages.3.label>24時間以上</AssignedToArt.stages.3.label>
+	<AssignedToArt.stages.4.label>48時間以上</AssignedToArt.stages.4.label>
+
+	<AssignedToCleaning.label>掃除を割り当てられた</AssignedToCleaning.label>
+	<AssignedToCleaning.stages.0.label>短時間</AssignedToCleaning.stages.0.label>
+	<AssignedToCleaning.stages.1.label>6時間以上</AssignedToCleaning.stages.1.label>
+	<AssignedToCleaning.stages.2.label>12時間以上</AssignedToCleaning.stages.2.label>
+	<AssignedToCleaning.stages.3.label>24時間以上</AssignedToCleaning.stages.3.label>
+	<AssignedToCleaning.stages.4.label>48時間以上</AssignedToCleaning.stages.4.label>
+
+	<AssignedToConstruction.label>建築を割り当てられた</AssignedToConstruction.label>
+	<AssignedToConstruction.stages.0.label>短時間</AssignedToConstruction.stages.0.label>
+	<AssignedToConstruction.stages.1.label>6時間以上</AssignedToConstruction.stages.1.label>
+	<AssignedToConstruction.stages.2.label>12時間以上</AssignedToConstruction.stages.2.label>
+	<AssignedToConstruction.stages.3.label>24時間以上</AssignedToConstruction.stages.3.label>
+	<AssignedToConstruction.stages.4.label>48時間以上</AssignedToConstruction.stages.4.label>
+
+	<AssignedToCooking.label>料理を割り当てられた</AssignedToCooking.label>
+	<AssignedToCooking.stages.0.label>短時間</AssignedToCooking.stages.0.label>
+	<AssignedToCooking.stages.1.label>6時間以上</AssignedToCooking.stages.1.label>
+	<AssignedToCooking.stages.2.label>12時間以上</AssignedToCooking.stages.2.label>
+	<AssignedToCooking.stages.3.label>24時間以上</AssignedToCooking.stages.3.label>
+	<AssignedToCooking.stages.4.label>48時間以上</AssignedToCooking.stages.4.label>
+
+	<AssignedToCrafting.label>工芸を割り当てられた</AssignedToCrafting.label>
+	<AssignedToCrafting.stages.0.label>短時間</AssignedToCrafting.stages.0.label>
+	<AssignedToCrafting.stages.1.label>6時間以上</AssignedToCrafting.stages.1.label>
+	<AssignedToCrafting.stages.2.label>12時間以上</AssignedToCrafting.stages.2.label>
+	<AssignedToCrafting.stages.3.label>24時間以上</AssignedToCrafting.stages.3.label>
+	<AssignedToCrafting.stages.4.label>48時間以上</AssignedToCrafting.stages.4.label>
+
+	<AssignedToDoctor.label>医者を割り当てられた</AssignedToDoctor.label>
+	<AssignedToDoctor.stages.0.label>短時間</AssignedToDoctor.stages.0.label>
+	<AssignedToDoctor.stages.1.label>6時間以上</AssignedToDoctor.stages.1.label>
+	<AssignedToDoctor.stages.2.label>12時間以上</AssignedToDoctor.stages.2.label>
+	<AssignedToDoctor.stages.3.label>24時間以上</AssignedToDoctor.stages.3.label>
+	<AssignedToDoctor.stages.4.label>48時間以上</AssignedToDoctor.stages.4.label>
+
+	<AssignedToFirefighter.label>消火を割り当てられた</AssignedToFirefighter.label>
+	<AssignedToFirefighter.stages.0.label>短時間</AssignedToFirefighter.stages.0.label>
+	<AssignedToFirefighter.stages.1.label>6時間以上</AssignedToFirefighter.stages.1.label>
+	<AssignedToFirefighter.stages.2.label>12時間以上</AssignedToFirefighter.stages.2.label>
+	<AssignedToFirefighter.stages.3.label>24時間以上</AssignedToFirefighter.stages.3.label>
+	<AssignedToFirefighter.stages.4.label>48時間以上</AssignedToFirefighter.stages.4.label>
+
+	<AssignedToGrowing.label>栽培を割り当てられた</AssignedToGrowing.label>
+	<AssignedToGrowing.stages.0.label>短時間</AssignedToGrowing.stages.0.label>
+	<AssignedToGrowing.stages.1.label>6時間以上</AssignedToGrowing.stages.1.label>
+	<AssignedToGrowing.stages.2.label>12時間以上</AssignedToGrowing.stages.2.label>
+	<AssignedToGrowing.stages.3.label>24時間以上</AssignedToGrowing.stages.3.label>
+	<AssignedToGrowing.stages.4.label>48時間以上</AssignedToGrowing.stages.4.label>
+
+	<AssignedToHandling.label>調教を割り当てられた</AssignedToHandling.label>
+	<AssignedToHandling.stages.0.label>短時間</AssignedToHandling.stages.0.label>
+	<AssignedToHandling.stages.1.label>6時間以上</AssignedToHandling.stages.1.label>
+	<AssignedToHandling.stages.2.label>12時間以上</AssignedToHandling.stages.2.label>
+	<AssignedToHandling.stages.3.label>24時間以上</AssignedToHandling.stages.3.label>
+	<AssignedToHandling.stages.4.label>48時間以上</AssignedToHandling.stages.4.label>
+
+	<AssignedToHauling.label>運搬を割り当てられた</AssignedToHauling.label>
+	<AssignedToHauling.stages.0.label>短時間</AssignedToHauling.stages.0.label>
+	<AssignedToHauling.stages.1.label>6時間以上</AssignedToHauling.stages.1.label>
+	<AssignedToHauling.stages.2.label>12時間以上</AssignedToHauling.stages.2.label>
+	<AssignedToHauling.stages.3.label>24時間以上</AssignedToHauling.stages.3.label>
+	<AssignedToHauling.stages.4.label>48時間以上</AssignedToHauling.stages.4.label>
+
+	<AssignedToHunting.label>狩猟を割り当てられた</AssignedToHunting.label>
+	<AssignedToHunting.stages.0.label>短時間</AssignedToHunting.stages.0.label>
+	<AssignedToHunting.stages.1.label>6時間以上</AssignedToHunting.stages.1.label>
+	<AssignedToHunting.stages.2.label>12時間以上</AssignedToHunting.stages.2.label>
+	<AssignedToHunting.stages.3.label>24時間以上</AssignedToHunting.stages.3.label>
+	<AssignedToHunting.stages.4.label>48時間以上</AssignedToHunting.stages.4.label>
+
+	<AssignedToMining.label>採掘を割り当てられた</AssignedToMining.label>
+	<AssignedToMining.stages.0.label>短時間</AssignedToMining.stages.0.label>
+	<AssignedToMining.stages.1.label>6時間以上</AssignedToMining.stages.1.label>
+	<AssignedToMining.stages.2.label>12時間以上</AssignedToMining.stages.2.label>
+	<AssignedToMining.stages.3.label>24時間以上</AssignedToMining.stages.3.label>
+	<AssignedToMining.stages.4.label>48時間以上</AssignedToMining.stages.4.label>
+
+	<AssignedToPlantCutting.label>収穫を割り当てられた</AssignedToPlantCutting.label>
+	<AssignedToPlantCutting.stages.0.label>短時間</AssignedToPlantCutting.stages.0.label>
+	<AssignedToPlantCutting.stages.1.label>6時間以上</AssignedToPlantCutting.stages.1.label>
+	<AssignedToPlantCutting.stages.2.label>12時間以上</AssignedToPlantCutting.stages.2.label>
+	<AssignedToPlantCutting.stages.3.label>24時間以上</AssignedToPlantCutting.stages.3.label>
+	<AssignedToPlantCutting.stages.4.label>48時間以上</AssignedToPlantCutting.stages.4.label>
+
+	<AssignedToResearch.label>研究を割り当てられた</AssignedToResearch.label>
+	<AssignedToResearch.stages.0.label>短時間</AssignedToResearch.stages.0.label>
+	<AssignedToResearch.stages.1.label>6時間以上</AssignedToResearch.stages.1.label>
+	<AssignedToResearch.stages.2.label>12時間以上</AssignedToResearch.stages.2.label>
+	<AssignedToResearch.stages.3.label>24時間以上</AssignedToResearch.stages.3.label>
+	<AssignedToResearch.stages.4.label>48時間以上</AssignedToResearch.stages.4.label>
+
+	<AssignedToSmithing.label>鍛冶を割り当てられた</AssignedToSmithing.label>
+	<AssignedToSmithing.stages.0.label>短時間</AssignedToSmithing.stages.0.label>
+	<AssignedToSmithing.stages.1.label>6時間以上</AssignedToSmithing.stages.1.label>
+	<AssignedToSmithing.stages.2.label>12時間以上</AssignedToSmithing.stages.2.label>
+	<AssignedToSmithing.stages.3.label>24時間以上</AssignedToSmithing.stages.3.label>
+	<AssignedToSmithing.stages.4.label>48時間以上</AssignedToSmithing.stages.4.label>
+
+	<AssignedToTailoring.label>裁縫を割り当てられた</AssignedToTailoring.label>
+	<AssignedToTailoring.stages.0.label>短時間</AssignedToTailoring.stages.0.label>
+	<AssignedToTailoring.stages.1.label>6時間以上</AssignedToTailoring.stages.1.label>
+	<AssignedToTailoring.stages.2.label>12時間以上</AssignedToTailoring.stages.2.label>
+	<AssignedToTailoring.stages.3.label>24時間以上</AssignedToTailoring.stages.3.label>
+	<AssignedToTailoring.stages.4.label>48時間以上</AssignedToTailoring.stages.4.label>
+
+	<AssignedToWarden.label>看守を割り当てられた</AssignedToWarden.label>
+	<AssignedToWarden.stages.0.label>短時間</AssignedToWarden.stages.0.label>
+	<AssignedToWarden.stages.1.label>6時間以上</AssignedToWarden.stages.1.label>
+	<AssignedToWarden.stages.2.label>12時間以上</AssignedToWarden.stages.2.label>
+	<AssignedToWarden.stages.3.label>24時間以上</AssignedToWarden.stages.3.label>
+	<AssignedToWarden.stages.4.label>48時間以上</AssignedToWarden.stages.4.label>
+
+	<AssignedAWeapon.label>武器を持たされた</AssignedAWeapon.label>
+	<AssignedAWeapon.stages.0.label>短時間</AssignedAWeapon.stages.0.label>
+	<AssignedAWeapon.stages.1.label>6時間以上</AssignedAWeapon.stages.1.label>
+	<AssignedAWeapon.stages.2.label>12時間以上</AssignedAWeapon.stages.2.label>
+	<AssignedAWeapon.stages.3.label>24時間以上</AssignedAWeapon.stages.3.label>
+	<AssignedAWeapon.stages.4.label>48時間以上</AssignedAWeapon.stages.4.label>
+
+
+</LanguageData>

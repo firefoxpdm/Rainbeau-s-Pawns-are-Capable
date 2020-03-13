@@ -1,0 +1,63 @@
+﻿<Patch>
+
+	<Operation Class="PatchOperationAdd">
+		<xpath>Defs/HediffGiverSetDef[defName = "OrganicStandard"]/hediffGivers</xpath>
+		<value>
+			<li Class="PawnsAreCapable.HediffGiver_AssignedToArt">
+				<hediff>AssignedToArt</hediff>
+			</li>
+			<li Class="PawnsAreCapable.HediffGiver_AssignedToCleaning">
+				<hediff>AssignedToCleaning</hediff>
+			</li>
+			<li Class="PawnsAreCapable.HediffGiver_AssignedToConstruction">
+				<hediff>AssignedToConstruction</hediff>
+			</li>
+			<li Class="PawnsAreCapable.HediffGiver_AssignedToCooking">
+				<hediff>AssignedToCooking</hediff>
+			</li>
+			<li Class="PawnsAreCapable.HediffGiver_AssignedToCrafting">
+				<hediff>AssignedToCrafting</hediff>
+			</li>
+			<li Class="PawnsAreCapable.HediffGiver_AssignedToDoctor">
+				<hediff>AssignedToDoctor</hediff>
+			</li>
+			<li Class="PawnsAreCapable.HediffGiver_AssignedToFirefighter">
+				<hediff>AssignedToFirefighter</hediff>
+			</li>
+			<li Class="PawnsAreCapable.HediffGiver_AssignedToGrowing">
+				<hediff>AssignedToGrowing</hediff>
+			</li>
+			<li Class="PawnsAreCapable.HediffGiver_AssignedToHandling">
+				<hediff>AssignedToHandling</hediff>
+			</li>
+			<li Class="PawnsAreCapable.HediffGiver_AssignedToHauling">
+				<hediff>AssignedToHauling</hediff>
+			</li>
+			<li Class="PawnsAreCapable.HediffGiver_AssignedToHunting">
+				<hediff>AssignedToHunting</hediff>
+			</li>
+			<li Class="PawnsAreCapable.HediffGiver_AssignedToMining">
+				<hediff>AssignedToMining</hediff>
+			</li>
+			<li Class="PawnsAreCapable.HediffGiver_AssignedToPlantCutting">
+				<hediff>AssignedToPlantCutting</hediff>
+			</li>
+			<li Class="PawnsAreCapable.HediffGiver_AssignedToResearch">
+				<hediff>AssignedToResearch</hediff>
+			</li>
+			<li Class="PawnsAreCapable.HediffGiver_AssignedToSmithing">
+				<hediff>AssignedToSmithing</hediff>
+			</li>
+			<li Class="PawnsAreCapable.HediffGiver_AssignedToTailoring">
+				<hediff>AssignedToTailoring</hediff>
+			</li>
+			<li Class="PawnsAreCapable.HediffGiver_AssignedToWarden">
+				<hediff>AssignedToWarden</hediff>
+			</li>
+			<li Class="PawnsAreCapable.HediffGiver_AssignedAWeapon">
+				<hediff>AssignedAWeapon</hediff>
+			</li>
+		</value>
+	</Operation>
+
+</Patch>

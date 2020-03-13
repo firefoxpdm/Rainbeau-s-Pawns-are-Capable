@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<PAC.IncapableOf>嫌いな仕事の種類</PAC.IncapableOf>
+	<PAC.CannotDoThisWork>{0}はこの種類の作業を嫌っています。</PAC.CannotDoThisWork>
+
+	<PAC.CannotPrioritizeWorkGiverDisabled>優先順位を付けられません(武器を持てない非暴力のポーン)</PAC.CannotPrioritizeWorkGiverDisabled>
+	<PAC.CannotPrioritizeNotAssignedToWorkType>優先順位を付けられません(ポーンが嫌いな仕事であり、{0}に割り当てられていません）</PAC.CannotPrioritizeNotAssignedToWorkType>
+	<PAC.IsIncapableOfViolenceLower>{0}は非暴力的で、武器が割り当てられていません</PAC.IsIncapableOfViolenceLower>
+
+	<PAC.BadWorkAssignment.Label>ひどい仕事が割り当てられています</PAC.BadWorkAssignment.Label>
+	<PAC.BadWorkAssignment.Explanation>少なくとも1人のポーンが嫌いな仕事の種類に割り当てられています。短期的には、このことはおそらく問題ではありませんが、時間の経過とともに極端な不幸な状態へつながる可能性があります。</PAC.BadWorkAssignment.Explanation>
+
+	<PAC.AssignedAWeapon.Label>非暴力主義のポーンに武器を持たせています</PAC.AssignedAWeapon.Label>
+	<PAC.AssignedAWeapon.Explanation>暴力的な行動を嫌うポーンに武器を持たせています。短期的には、このことはおそらく問題ではありませんが、時間の経過とともに極端な不幸な状態へつながる可能性があります。</PAC.AssignedAWeapon.Explanation>
+
+</LanguageData>

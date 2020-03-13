@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<AssignedToArt.stages.0.label>芸術を強制された</AssignedToArt.stages.0.label>
+	<AssignedToArt.stages.0.description>私は芸術が嫌いです。</AssignedToArt.stages.0.description>
+	<AssignedToArt.stages.1.label>芸術を強制された(6時間)</AssignedToArt.stages.1.label>
+	<AssignedToArt.stages.1.description>私は本当に芸術が嫌いです。</AssignedToArt.stages.1.description>
+	<AssignedToArt.stages.2.label>芸術を強制された(12時間)</AssignedToArt.stages.2.label>
+	<AssignedToArt.stages.2.description>本当に、私は本気で芸術が大嫌い!</AssignedToArt.stages.2.description>
+	<AssignedToArt.stages.3.label>芸術を強制された(24時間)</AssignedToArt.stages.3.label>
+	<AssignedToArt.stages.3.description>私がまだ芸術を割り当てられているとは信じられない！</AssignedToArt.stages.3.description>
+	<AssignedToArt.stages.4.label>芸術を強制された(48時間)</AssignedToArt.stages.4.label>
+	<AssignedToArt.stages.4.description>もしこれ以上、私が芸術に1分でも割り当てられているなら、私は正気じゃなくなると誓う！</AssignedToArt.stages.4.description>
+	<AssignedToArt.stages.5.label>芸術を強制された(過去)</AssignedToArt.stages.5.label>
+	<AssignedToArt.stages.5.description>私はまだ芸術を強制された事でイライラしている。</AssignedToArt.stages.5.description>
+
+	<AssignedToCleaning.stages.0.label>掃除を強制された</AssignedToCleaning.stages.0.label>
+	<AssignedToCleaning.stages.0.description>私は掃除が嫌いです。</AssignedToCleaning.stages.0.description>
+	<AssignedToCleaning.stages.1.label>掃除を強制された(過去)</AssignedToCleaning.stages.1.label>
+	<AssignedToCleaning.stages.1.description>私はまだ掃除を強制された事でイライラしている。</AssignedToCleaning.stages.1.description>
+
+	<AssignedToConstruction.stages.0.label>建築を強制された</AssignedToConstruction.stages.0.label>
+	<AssignedToConstruction.stages.0.description>私は建築が嫌いです。</AssignedToConstruction.stages.0.description>
+	<AssignedToConstruction.stages.1.label>建築を強制された(6時間)</AssignedToConstruction.stages.1.label>
+	<AssignedToConstruction.stages.1.description>私は本当に建築が嫌いです。</AssignedToConstruction.stages.1.description>
+	<AssignedToConstruction.stages.2.label>建築を強制された(12時間)</AssignedToConstruction.stages.2.label>
+	<AssignedToConstruction.stages.2.description>本当に、私は本気で建築が大嫌い!</AssignedToConstruction.stages.2.description>
+	<AssignedToConstruction.stages.3.label>建築を強制された(24時間)</AssignedToConstruction.stages.3.label>
+	<AssignedToConstruction.stages.3.description>私がまだ建築を割り当てられているとは信じられない！</AssignedToConstruction.stages.3.description>
+	<AssignedToConstruction.stages.4.label>建築を強制された(48時間)</AssignedToConstruction.stages.4.label>
+	<AssignedToConstruction.stages.4.description>もしこれ以上、私が建築に1分でも割り当てられているなら、私は正気じゃなくなると誓う！</AssignedToConstruction.stages.4.description>
+	<AssignedToConstruction.stages.5.label>建築を強制された(過去)</AssignedToConstruction.stages.5.label>
+	<AssignedToConstruction.stages.5.description>私はまだ建築を強制された事でイライラしている。</AssignedToConstruction.stages.5.description>
+
+	<AssignedToCooking.stages.0.label>料理を強制された</AssignedToCooking.stages.0.label>
+	<AssignedToCooking.stages.0.description>私は料理が嫌いです。</AssignedToCooking.stages.0.description>
+	<AssignedToCooking.stages.1.label>料理を強制された(6時間)</AssignedToCooking.stages.1.label>
+	<AssignedToCooking.stages.1.description>私は本当に料理が嫌いです。</AssignedToCooking.stages.1.description>
+	<AssignedToCooking.stages.2.label>料理を強制された(12時間)</AssignedToCooking.stages.2.label>
+	<AssignedToCooking.stages.2.description>本当に、私は本気で料理が大嫌い!</AssignedToCooking.stages.2.description>
+	<AssignedToCooking.stages.3.label>料理を強制された(24時間)</AssignedToCooking.stages.3.label>
+	<AssignedToCooking.stages.3.description>私がまだ料理を割り当てられているとは信じられない！</AssignedToCooking.stages.3.description>
+	<AssignedToCooking.stages.4.label>料理を強制された(48時間)</AssignedToCooking.stages.4.label>
+	<AssignedToCooking.stages.4.description>もしこれ以上、私が料理に1分でも割り当てられているなら、私は正気じゃなくなると誓う！</AssignedToCooking.stages.4.description>
+	<AssignedToCooking.stages.5.label>料理を強制された(過去)</AssignedToCooking.stages.5.label>
+	<AssignedToCooking.stages.5.description>私はまだ料理を強制された事でイライラしている。</AssignedToCooking.stages.5.description>
+
+	<AssignedToCrafting.stages.0.label>工芸を強制された</AssignedToCrafting.stages.0.label>
+	<AssignedToCrafting.stages.0.description>私は工芸が嫌いです。</AssignedToCrafting.stages.0.description>
+	<AssignedToCrafting.stages.1.label>工芸を強制された(6時間)</AssignedToCrafting.stages.1.label>
+	<AssignedToCrafting.stages.1.description>私は本当に工芸が嫌いです。</AssignedToCrafting.stages.1.description>
+	<AssignedToCrafting.stages.2.label>工芸を強制された(12時間)</AssignedToCrafting.stages.2.label>
+	<AssignedToCrafting.stages.2.description>本当に、私は本気で工芸が大嫌い!</AssignedToCrafting.stages.2.description>
+	<AssignedToCrafting.stages.3.label>工芸を強制された(24時間)</AssignedToCrafting.stages.3.label>
+	<AssignedToCrafting.stages.3.description>私がまだ工芸を割り当てられているとは信じられない！</AssignedToCrafting.stages.3.description>
+	<AssignedToCrafting.stages.4.label>工芸を強制された(48時間)</AssignedToCrafting.stages.4.label>
+	<AssignedToCrafting.stages.4.description>もしこれ以上、私が工芸に1分でも割り当てられているなら、私は正気じゃなくなると誓う！</AssignedToCrafting.stages.4.description>
+	<AssignedToCrafting.stages.5.label>工芸を強制された(過去)</AssignedToCrafting.stages.5.label>
+	<AssignedToCrafting.stages.5.description>私はまだ工芸を強制された事でイライラしている。</AssignedToCrafting.stages.5.description>
+
+	<AssignedToDoctor.stages.0.label>医者を強制された</AssignedToDoctor.stages.0.label>
+	<AssignedToDoctor.stages.0.description>私は医者をする事が嫌いです。</AssignedToDoctor.stages.0.description>
+	<AssignedToDoctor.stages.1.label>医者を強制された(6時間)</AssignedToDoctor.stages.1.label>
+	<AssignedToDoctor.stages.1.description>私は本当に医者をする事が嫌いです。</AssignedToDoctor.stages.1.description>
+	<AssignedToDoctor.stages.2.label>医者を強制された(12時間)</AssignedToDoctor.stages.2.label>
+	<AssignedToDoctor.stages.2.description>本当に、私は本気で医者をする事が大嫌い!</AssignedToDoctor.stages.2.description>
+	<AssignedToDoctor.stages.3.label>医者を強制された(24時間)</AssignedToDoctor.stages.3.label>
+	<AssignedToDoctor.stages.3.description>私がまだ医者をする事を割り当てられているとは信じられない！</AssignedToDoctor.stages.3.description>
+	<AssignedToDoctor.stages.4.label>医者を強制された(48時間)</AssignedToDoctor.stages.4.label>
+	<AssignedToDoctor.stages.4.description>もしこれ以上、私が医者をする事に1分でも割り当てられているなら、私は正気じゃなくなると誓う！</AssignedToDoctor.stages.4.description>
+	<AssignedToDoctor.stages.5.label>医者を強制された(過去)</AssignedToDoctor.stages.5.label>
+	<AssignedToDoctor.stages.5.description>私はまだ医者をするのを強制された事でイライラしている。</AssignedToDoctor.stages.5.description>
+
+	<AssignedToFirefighter.stages.0.label>消火を強制された</AssignedToFirefighter.stages.0.label>
+	<AssignedToFirefighter.stages.0.description>私は消火活動が嫌いです。</AssignedToFirefighter.stages.0.description>
+	<AssignedToFirefighter.stages.1.label>消火を強制された(6時間)</AssignedToFirefighter.stages.1.label>
+	<AssignedToFirefighter.stages.1.description>私は本当に消火活動が嫌いです。</AssignedToFirefighter.stages.1.description>
+	<AssignedToFirefighter.stages.2.label>消火を強制された(12時間)</AssignedToFirefighter.stages.2.label>
+	<AssignedToFirefighter.stages.2.description>本当に、私は本気で消火活動が大嫌い!</AssignedToFirefighter.stages.2.description>
+	<AssignedToFirefighter.stages.3.label>消火を強制された(24時間)</AssignedToFirefighter.stages.3.label>
+	<AssignedToFirefighter.stages.3.description>私がまだ消火活動を割り当てられているとは信じられない！</AssignedToFirefighter.stages.3.description>
+	<AssignedToFirefighter.stages.4.label>消火を強制された(48時間)</AssignedToFirefighter.stages.4.label>
+	<AssignedToFirefighter.stages.4.description>もしこれ以上、私が消火活動に1分でも割り当てられているなら、私は正気じゃなくなると誓う！</AssignedToFirefighter.stages.4.description>
+	<AssignedToFirefighter.stages.5.label>消火を強制された(過去)</AssignedToFirefighter.stages.5.label>
+	<AssignedToFirefighter.stages.5.description>私はまだ消火活動を強制された事でイライラしている。</AssignedToFirefighter.stages.5.description>
+
+	<AssignedToGrowing.stages.0.label>栽培を強制された</AssignedToGrowing.stages.0.label>
+	<AssignedToGrowing.stages.0.description>私は何かを栽培する事が嫌いです。</AssignedToGrowing.stages.0.description>
+	<AssignedToGrowing.stages.1.label>栽培を強制された(6時間)</AssignedToGrowing.stages.1.label>
+	<AssignedToGrowing.stages.1.description>私は本当に何かを栽培する事が嫌いです。</AssignedToGrowing.stages.1.description>
+	<AssignedToGrowing.stages.2.label>栽培を強制された(12時間)</AssignedToGrowing.stages.2.label>
+	<AssignedToGrowing.stages.2.description>本当に、私は本気で何かを栽培する事が大嫌い!</AssignedToGrowing.stages.2.description>
+	<AssignedToGrowing.stages.3.label>栽培を強制された(24時間)</AssignedToGrowing.stages.3.label>
+	<AssignedToGrowing.stages.3.description>私がまだ何かを栽培する事を割り当てられているとは信じられない！</AssignedToGrowing.stages.3.description>
+	<AssignedToGrowing.stages.4.label>栽培を強制された(48時間)</AssignedToGrowing.stages.4.label>
+	<AssignedToGrowing.stages.4.description>もしこれ以上、私が何かを栽培する事に1分でも割り当てられているなら、私は正気じゃなくなると誓う！</AssignedToGrowing.stages.4.description>
+	<AssignedToGrowing.stages.5.label>栽培を強制された(過去)</AssignedToGrowing.stages.5.label>
+	<AssignedToGrowing.stages.5.description>私はまだ何かを栽培する事を強制された事でイライラしている。</AssignedToGrowing.stages.5.description>
+
+	<AssignedToHandling.stages.0.label>調教を強制された</AssignedToHandling.stages.0.label>
+	<AssignedToHandling.stages.0.description>私は動物が嫌いです。</AssignedToHandling.stages.0.description>
+	<AssignedToHandling.stages.1.label>調教を強制された(6時間)</AssignedToHandling.stages.1.label>
+	<AssignedToHandling.stages.1.description>私は本当に動物が嫌いです。</AssignedToHandling.stages.1.description>
+	<AssignedToHandling.stages.2.label>調教を強制された(12時間)</AssignedToHandling.stages.2.label>
+	<AssignedToHandling.stages.2.description>本当に、私は本気で動物が大嫌い!</AssignedToHandling.stages.2.description>
+	<AssignedToHandling.stages.3.label>調教を強制された(24時間)</AssignedToHandling.stages.3.label>
+	<AssignedToHandling.stages.3.description>私がまだ動物の調教を割り当てられているとは信じられない！</AssignedToHandling.stages.3.description>
+	<AssignedToHandling.stages.4.label>調教を強制された(48時間)</AssignedToHandling.stages.4.label>
+	<AssignedToHandling.stages.4.description>もしこれ以上、私が動物の調教に1分でも割り当てられているなら、私は正気じゃなくなると誓う！</AssignedToHandling.stages.4.description>
+	<AssignedToHandling.stages.5.label>調教を強制された(過去)</AssignedToHandling.stages.5.label>
+	<AssignedToHandling.stages.5.description>私はまだ動物の調教を強制された事でイライラしている。</AssignedToHandling.stages.5.description>
+
+	<AssignedToHauling.stages.0.label>運搬を強制された</AssignedToHauling.stages.0.label>
+	<AssignedToHauling.stages.0.description>私は運搬が嫌いです。</AssignedToHauling.stages.0.description>
+	<AssignedToHauling.stages.1.label>運搬を強制された(過去)</AssignedToHauling.stages.1.label>
+	<AssignedToHauling.stages.1.description>私はまだ運搬を強制された事でイライラしている。</AssignedToHauling.stages.1.description>
+
+	<AssignedToHunting.stages.0.label>狩猟を強制された</AssignedToHunting.stages.0.label>
+	<AssignedToHunting.stages.0.description>私は狩猟が嫌いです。</AssignedToHunting.stages.0.description>
+	<AssignedToHunting.stages.1.label>狩猟を強制された(6時間)</AssignedToHunting.stages.1.label>
+	<AssignedToHunting.stages.1.description>私は本当に狩猟が嫌いです。</AssignedToHunting.stages.1.description>
+	<AssignedToHunting.stages.2.label>狩猟を強制された(12時間)</AssignedToHunting.stages.2.label>
+	<AssignedToHunting.stages.2.description>本当に、私は本気で狩猟が大嫌い!</AssignedToHunting.stages.2.description>
+	<AssignedToHunting.stages.3.label>狩猟を強制された(24時間)</AssignedToHunting.stages.3.label>
+	<AssignedToHunting.stages.3.description>私がまだ狩猟を割り当てられているとは信じられない！</AssignedToHunting.stages.3.description>
+	<AssignedToHunting.stages.4.label>狩猟を強制された(48時間)</AssignedToHunting.stages.4.label>
+	<AssignedToHunting.stages.4.description>もしこれ以上、私が狩猟に1分でも割り当てられているなら、私は正気じゃなくなると誓う！</AssignedToHunting.stages.4.description>
+	<AssignedToHunting.stages.5.label>狩猟を強制された(過去)</AssignedToHunting.stages.5.label>
+	<AssignedToHunting.stages.5.description>私はまだ狩猟を強制された事でイライラしている。</AssignedToHunting.stages.5.description>
+
+	<AssignedToMining.stages.0.label>採掘を強制された</AssignedToMining.stages.0.label>
+	<AssignedToMining.stages.0.description>私は採掘が嫌いです。</AssignedToMining.stages.0.description>
+	<AssignedToMining.stages.1.label>採掘を強制された(6時間)</AssignedToMining.stages.1.label>
+	<AssignedToMining.stages.1.description>私は本当に採掘が嫌いです。</AssignedToMining.stages.1.description>
+	<AssignedToMining.stages.2.label>採掘を強制された(12時間)</AssignedToMining.stages.2.label>
+	<AssignedToMining.stages.2.description>本当に、私は本気で採掘が大嫌い!</AssignedToMining.stages.2.description>
+	<AssignedToMining.stages.3.label>採掘を強制された(24時間)</AssignedToMining.stages.3.label>
+	<AssignedToMining.stages.3.description>私がまだ採掘を割り当てられているとは信じられない！</AssignedToMining.stages.3.description>
+	<AssignedToMining.stages.4.label>採掘を強制された(48時間)</AssignedToMining.stages.4.label>
+	<AssignedToMining.stages.4.description>もしこれ以上、私が採掘に1分でも割り当てられているなら、私は正気じゃなくなると誓う！</AssignedToMining.stages.4.description>
+	<AssignedToMining.stages.5.label>採掘を強制された(過去)</AssignedToMining.stages.5.label>
+	<AssignedToMining.stages.5.description>私はまだ採掘を強制された事でイライラしている。</AssignedToMining.stages.5.description>
+
+	<AssignedToPlantCutting.stages.0.label>収穫を強制された</AssignedToPlantCutting.stages.0.label>
+	<AssignedToPlantCutting.stages.0.description>私は収穫が嫌いです。</AssignedToPlantCutting.stages.0.description>
+	<AssignedToPlantCutting.stages.1.label>収穫を強制された(過去)</AssignedToPlantCutting.stages.1.label>
+	<AssignedToPlantCutting.stages.1.description>私はまだ収穫を強制された事でイライラしている。</AssignedToPlantCutting.stages.1.description>
+
+	<AssignedToResearch.stages.0.label>研究を強制された</AssignedToResearch.stages.0.label>
+	<AssignedToResearch.stages.0.description>私は研究が嫌いです。</AssignedToResearch.stages.0.description>
+	<AssignedToResearch.stages.1.label>研究を強制された(6時間)</AssignedToResearch.stages.1.label>
+	<AssignedToResearch.stages.1.description>私は本当に研究が嫌いです。</AssignedToResearch.stages.1.description>
+	<AssignedToResearch.stages.2.label>研究を強制された(12時間)</AssignedToResearch.stages.2.label>
+	<AssignedToResearch.stages.2.description>本当に、私は本気で研究が大嫌い!</AssignedToResearch.stages.2.description>
+	<AssignedToResearch.stages.3.label>研究を強制された(24時間)</AssignedToResearch.stages.3.label>
+	<AssignedToResearch.stages.3.description>私がまだ研究を割り当てられているとは信じられない！</AssignedToResearch.stages.3.description>
+	<AssignedToResearch.stages.4.label>研究を強制された(48時間)</AssignedToResearch.stages.4.label>
+	<AssignedToResearch.stages.4.description>もしこれ以上、私が研究に1分でも割り当てられているなら、私は正気じゃなくなると誓う！</AssignedToResearch.stages.4.description>
+	<AssignedToResearch.stages.5.label>研究を強制された(過去)</AssignedToResearch.stages.5.label>
+	<AssignedToResearch.stages.5.description>私はまだ研究を強制された事でイライラしている。</AssignedToResearch.stages.5.description>
+
+	<AssignedToSmithing.stages.0.label>鍛冶を強制された</AssignedToSmithing.stages.0.label>
+	<AssignedToSmithing.stages.0.description>私は鍛冶が嫌いです。</AssignedToSmithing.stages.0.description>
+	<AssignedToSmithing.stages.1.label>鍛冶を強制された(6時間)</AssignedToSmithing.stages.1.label>
+	<AssignedToSmithing.stages.1.description>私は本当に鍛冶が嫌いです。</AssignedToSmithing.stages.1.description>
+	<AssignedToSmithing.stages.2.label>鍛冶を強制された(12時間)</AssignedToSmithing.stages.2.label>
+	<AssignedToSmithing.stages.2.description>本当に、私は本気で鍛冶が大嫌い!</AssignedToSmithing.stages.2.description>
+	<AssignedToSmithing.stages.3.label>鍛冶を強制された(24時間)</AssignedToSmithing.stages.3.label>
+	<AssignedToSmithing.stages.3.description>私がまだ鍛冶を割り当てられているとは信じられない！</AssignedToSmithing.stages.3.description>
+	<AssignedToSmithing.stages.4.label>鍛冶を強制された(48時間)</AssignedToSmithing.stages.4.label>
+	<AssignedToSmithing.stages.4.description>もしこれ以上、私が鍛冶に1分でも割り当てられているなら、私は正気じゃなくなると誓う！</AssignedToSmithing.stages.4.description>
+	<AssignedToSmithing.stages.5.label>鍛冶を強制された(過去)</AssignedToSmithing.stages.5.label>
+	<AssignedToSmithing.stages.5.description>私はまだ鍛冶を強制された事でイライラしている。</AssignedToSmithing.stages.5.description>
+
+	<AssignedToTailoring.stages.0.label>裁縫を強制された</AssignedToTailoring.stages.0.label>
+	<AssignedToTailoring.stages.0.description>私は裁縫が嫌いです。</AssignedToTailoring.stages.0.description>
+	<AssignedToTailoring.stages.1.label>裁縫を強制された(6時間)</AssignedToTailoring.stages.1.label>
+	<AssignedToTailoring.stages.1.description>私は本当に裁縫が嫌いです。</AssignedToTailoring.stages.1.description>
+	<AssignedToTailoring.stages.2.label>裁縫を強制された(12時間)</AssignedToTailoring.stages.2.label>
+	<AssignedToTailoring.stages.2.description>本当に、私は本気で裁縫が大嫌い!</AssignedToTailoring.stages.2.description>
+	<AssignedToTailoring.stages.3.label>裁縫を強制された(24時間)</AssignedToTailoring.stages.3.label>
+	<AssignedToTailoring.stages.3.description>私がまだ裁縫を割り当てられているとは信じられない！</AssignedToTailoring.stages.3.description>
+	<AssignedToTailoring.stages.4.label>裁縫を強制された(48時間)</AssignedToTailoring.stages.4.label>
+	<AssignedToTailoring.stages.4.description>もしこれ以上、私が裁縫に1分でも割り当てられているなら、私は正気じゃなくなると誓う！</AssignedToTailoring.stages.4.description>
+	<AssignedToTailoring.stages.5.label>裁縫を強制された(過去)</AssignedToTailoring.stages.5.label>
+	<AssignedToTailoring.stages.5.description>私はまだ裁縫を強制された事でイライラしている。</AssignedToTailoring.stages.5.description>
+
+	<AssignedToWarden.stages.0.label>wardenを強制された</AssignedToWarden.stages.0.label>
+	<AssignedToWarden.stages.0.description>私は看守の役割をさせられる事が嫌いです。</AssignedToWarden.stages.0.description>
+	<AssignedToWarden.stages.1.label>wardenを強制された(6時間)</AssignedToWarden.stages.1.label>
+	<AssignedToWarden.stages.1.description>私は本当に看守の役割をさせられる事が嫌いです。</AssignedToWarden.stages.1.description>
+	<AssignedToWarden.stages.2.label>wardenを強制された(12時間)</AssignedToWarden.stages.2.label>
+	<AssignedToWarden.stages.2.description>本当に、私は本気で看守の役割をさせられる事が大嫌い!</AssignedToWarden.stages.2.description>
+	<AssignedToWarden.stages.3.label>wardenを強制された(24時間)</AssignedToWarden.stages.3.label>
+	<AssignedToWarden.stages.3.description>私がまだ看守の役割を割り当てられているとは信じられない！</AssignedToWarden.stages.3.description>
+	<AssignedToWarden.stages.4.label>wardenを強制された(48時間)</AssignedToWarden.stages.4.label>
+	<AssignedToWarden.stages.4.description>もしこれ以上、私が看守の役割に1分でも割り当てられているなら、私は正気じゃなくなると誓う！</AssignedToWarden.stages.4.description>
+	<AssignedToWarden.stages.5.label>wardenを強制された(過去)</AssignedToWarden.stages.5.label>
+	<AssignedToWarden.stages.5.description>私はまだ看守の役割を強制された事でイライラしている。</AssignedToWarden.stages.5.description>
+
+	<AssignedAWeapon.stages.0.label>武器を持たされた</AssignedAWeapon.stages.0.label>
+	<AssignedAWeapon.stages.0.description>私はcarrying a weaponが嫌いです。</AssignedAWeapon.stages.0.description>
+	<AssignedAWeapon.stages.1.label>武器を持たされた(6時間)</AssignedAWeapon.stages.1.label>
+	<AssignedAWeapon.stages.1.description>私は本当にcarrying a weaponが嫌いです。</AssignedAWeapon.stages.1.description>
+	<AssignedAWeapon.stages.2.label>武器を持たされた(12時間)</AssignedAWeapon.stages.2.label>
+	<AssignedAWeapon.stages.2.description>本当に、私は本気でcarrying a weaponが大嫌い!</AssignedAWeapon.stages.2.description>
+	<AssignedAWeapon.stages.3.label>武器を持たされた(24時間)</AssignedAWeapon.stages.3.label>
+	<AssignedAWeapon.stages.3.description>私がまだ武器を持たされているとか信じられない！</AssignedAWeapon.stages.3.description>
+	<AssignedAWeapon.stages.4.label>武器を持たされた(48時間)</AssignedAWeapon.stages.4.label>
+	<AssignedAWeapon.stages.4.description>もしこれ以上、私が武器を持たされているなら、私はこれでどうするか判らない！(ええ、もちろんこれはちょっとした皮肉ですが、私は気にしません！)</AssignedAWeapon.stages.4.description>
+	<AssignedAWeapon.stages.5.label>武器を持たされていた(過去)</AssignedAWeapon.stages.5.label>
+	<AssignedAWeapon.stages.5.description>私はまだcarry a weaponを強制された事でイライラしている。</AssignedAWeapon.stages.5.description>
+
+
+</LanguageData>

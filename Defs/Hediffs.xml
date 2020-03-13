@@ -1,0 +1,1003 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	  
+	<HediffDef>
+		<defName>AssignedToArt</defName>
+		<label>assigned to art</label>
+		<hediffClass>PawnsAreCapable.Hediff_AssignedToArt</hediffClass>
+		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+		<stages>
+			<li>
+				<label>0 hours</label>
+			</li>
+			<li>
+				<label>6 hours</label>
+				<minSeverity>0.1</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>12 hours</label>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>24 hours</label>
+				<minSeverity>0.3</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>48 hours</label>
+				<minSeverity>0.4</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.3</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>AssignedToCleaning</defName>
+		<label>assigned to cleaning</label>
+		<hediffClass>PawnsAreCapable.Hediff_AssignedToCleaning</hediffClass>
+		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>AssignedToConstruction</defName>
+		<label>assigned to construction</label>
+		<hediffClass>PawnsAreCapable.Hediff_AssignedToConstruction</hediffClass>
+		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+		<stages>
+			<li>
+				<label>0 hours</label>
+			</li>
+			<li>
+				<label>6 hours</label>
+				<minSeverity>0.1</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>12 hours</label>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>24 hours</label>
+				<minSeverity>0.3</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>48 hours</label>
+				<minSeverity>0.4</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.3</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>AssignedToCooking</defName>
+		<label>assigned to cooking</label>
+		<hediffClass>PawnsAreCapable.Hediff_AssignedToCooking</hediffClass>
+		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+		<stages>
+			<li>
+				<label>0 hours</label>
+			</li>
+			<li>
+				<label>6 hours</label>
+				<minSeverity>0.1</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>12 hours</label>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>24 hours</label>
+				<minSeverity>0.3</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>48 hours</label>
+				<minSeverity>0.4</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.3</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>AssignedToCrafting</defName>
+		<label>assigned to crafting</label>
+		<hediffClass>PawnsAreCapable.Hediff_AssignedToCrafting</hediffClass>
+		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+		<stages>
+			<li>
+				<label>0 hours</label>
+			</li>
+			<li>
+				<label>6 hours</label>
+				<minSeverity>0.1</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>12 hours</label>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>24 hours</label>
+				<minSeverity>0.3</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>48 hours</label>
+				<minSeverity>0.4</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.3</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>AssignedToDoctor</defName>
+		<label>assigned to doctor</label>
+		<hediffClass>PawnsAreCapable.Hediff_AssignedToDoctor</hediffClass>
+		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+		<stages>
+			<li>
+				<label>0 hours</label>
+			</li>
+			<li>
+				<label>6 hours</label>
+				<minSeverity>0.1</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>12 hours</label>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>24 hours</label>
+				<minSeverity>0.3</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>48 hours</label>
+				<minSeverity>0.4</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.3</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>AssignedToFirefighter</defName>
+		<label>assigned to firefighter</label>
+		<hediffClass>PawnsAreCapable.Hediff_AssignedToFirefighter</hediffClass>
+		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+		<stages>
+			<li>
+				<label>0 hours</label>
+			</li>
+			<li>
+				<label>6 hours</label>
+				<minSeverity>0.1</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>12 hours</label>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>24 hours</label>
+				<minSeverity>0.3</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>48 hours</label>
+				<minSeverity>0.4</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.3</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>AssignedToGrowing</defName>
+		<label>assigned to growing</label>
+		<hediffClass>PawnsAreCapable.Hediff_AssignedToGrowing</hediffClass>
+		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+		<stages>
+			<li>
+				<label>0 hours</label>
+			</li>
+			<li>
+				<label>6 hours</label>
+				<minSeverity>0.1</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>12 hours</label>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>24 hours</label>
+				<minSeverity>0.3</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>48 hours</label>
+				<minSeverity>0.4</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.3</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>AssignedToHandling</defName>
+		<label>assigned to handling</label>
+		<hediffClass>PawnsAreCapable.Hediff_AssignedToHandling</hediffClass>
+		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+		<stages>
+			<li>
+				<label>0 hours</label>
+			</li>
+			<li>
+				<label>6 hours</label>
+				<minSeverity>0.1</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>12 hours</label>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>24 hours</label>
+				<minSeverity>0.3</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>48 hours</label>
+				<minSeverity>0.4</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.3</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>AssignedToHauling</defName>
+		<label>assigned to hauling</label>
+		<hediffClass>PawnsAreCapable.Hediff_AssignedToHauling</hediffClass>
+		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+	</HediffDef>
+	
+	<HediffDef>
+		<defName>AssignedToHunting</defName>
+		<label>assigned to hunting</label>
+		<hediffClass>PawnsAreCapable.Hediff_AssignedToHunting</hediffClass>
+		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+		<stages>
+			<li>
+				<label>0 hours</label>
+			</li>
+			<li>
+				<label>6 hours</label>
+				<minSeverity>0.1</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>12 hours</label>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>24 hours</label>
+				<minSeverity>0.3</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>48 hours</label>
+				<minSeverity>0.4</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.3</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>AssignedToMining</defName>
+		<label>assigned to mining</label>
+		<hediffClass>PawnsAreCapable.Hediff_AssignedToMining</hediffClass>
+		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+		<stages>
+			<li>
+				<label>0 hours</label>
+			</li>
+			<li>
+				<label>6 hours</label>
+				<minSeverity>0.1</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>12 hours</label>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>24 hours</label>
+				<minSeverity>0.3</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>48 hours</label>
+				<minSeverity>0.4</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.3</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>AssignedToPlantCutting</defName>
+		<label>assigned to plant cutting</label>
+		<hediffClass>PawnsAreCapable.Hediff_AssignedToPlantCutting</hediffClass>
+		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>AssignedToResearch</defName>
+		<label>assigned to research</label>
+		<hediffClass>PawnsAreCapable.Hediff_AssignedToResearch</hediffClass>
+		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+		<stages>
+			<li>
+				<label>0 hours</label>
+			</li>
+			<li>
+				<label>6 hours</label>
+				<minSeverity>0.1</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>12 hours</label>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>24 hours</label>
+				<minSeverity>0.3</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>48 hours</label>
+				<minSeverity>0.4</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.3</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>AssignedToSmithing</defName>
+		<label>assigned to smithing</label>
+		<hediffClass>PawnsAreCapable.Hediff_AssignedToSmithing</hediffClass>
+		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+		<stages>
+			<li>
+				<label>0 hours</label>
+			</li>
+			<li>
+				<label>6 hours</label>
+				<minSeverity>0.1</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>12 hours</label>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>24 hours</label>
+				<minSeverity>0.3</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>48 hours</label>
+				<minSeverity>0.4</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.3</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>AssignedToTailoring</defName>
+		<label>assigned to tailoring</label>
+		<hediffClass>PawnsAreCapable.Hediff_AssignedToTailoring</hediffClass>
+		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+		<stages>
+			<li>
+				<label>0 hours</label>
+			</li>
+			<li>
+				<label>6 hours</label>
+				<minSeverity>0.1</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>12 hours</label>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>24 hours</label>
+				<minSeverity>0.3</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>48 hours</label>
+				<minSeverity>0.4</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.3</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>AssignedToWarden</defName>
+		<label>assigned to warden</label>
+		<hediffClass>PawnsAreCapable.Hediff_AssignedToWarden</hediffClass>
+		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+		<stages>
+			<li>
+				<label>0 hours</label>
+			</li>
+			<li>
+				<label>6 hours</label>
+				<minSeverity>0.1</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>12 hours</label>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>24 hours</label>
+				<minSeverity>0.3</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>48 hours</label>
+				<minSeverity>0.4</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.3</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+	<HediffDef>
+		<defName>AssignedAWeapon</defName>
+		<label>assigned a weapon</label>
+		<hediffClass>PawnsAreCapable.Hediff_AssignedAWeapon</hediffClass>
+		<defaultLabelColor>(1.0, 1.0, 0.5)</defaultLabelColor>
+		<initialSeverity>0.01</initialSeverity>
+		<stages>
+			<li>
+				<label>0 hours</label>
+			</li>
+			<li>
+				<label>6 hours</label>
+				<minSeverity>0.1</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>12 hours</label>
+				<minSeverity>0.2</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.05</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.025</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>24 hours</label>
+				<minSeverity>0.3</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.15</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.05</offset>
+					</li>
+				</capMods>
+			</li>
+			<li>
+				<label>48 hours</label>
+				<minSeverity>0.4</minSeverity>
+				<capMods>
+					<li>
+						<capacity>Moving</capacity>
+						<offset>-0.3</offset>
+					</li>
+					<li>
+						<capacity>Manipulation</capacity>
+						<offset>-0.15</offset>
+					</li>
+				</capMods>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

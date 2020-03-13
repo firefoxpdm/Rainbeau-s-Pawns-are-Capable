@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ModMetaData>
+
+	<name>[RF] Pawns are Capable! [1.0]</name>
+	<author>Rainbeau Flambe</author>
+	<url>https://ludeon.com/forums/index.php?topic=46165</url>
+	<targetVersion>1.0.0</targetVersion>
+	<description>(Last update: 12/08/2018)
+
+Tired of pawns who refuse to do certain types of work, even when their own lives and the survival of the colony depend on it? This mod changes the way in which the game handles "incapabilities." On the pawns' character tabs, you'll see that the "Incapable of" list has been replaced with a list of "Hated work types." These types of work are marked in amber on the work tab, and aren't assigned by default. But they can be assigned if necessary, as any pawn can be assigned to any type of work. Be aware, though, that if you assign a pawn to do hated work, there's a mood penalty (and eventually movement and even manipulation penalties) that will only grow worse the longer the assignment lasts. This mod is intended to allow you to assign pawns to work they hate in emergency situations. It is *not* intended to allow such assignments to be made on a long-term basis.
+
+Note 1: Since "violent acts" aren't a specific work type, pawns who abhor violence are capable of violent acts -- combat, etc. -- if and only if they're carrying a weapon. But so long as they're armed, they will suffer mood debuffs just as if they were assigned to a work type they hate.
+
+Note 2: As there are easy ways to "get around" restrictions on tasks like hauling, anyway, "incapable of dumb labor" is treated a bit differently than other incapabilities. Pawns who hate dumb labor are simply given an extra trait that reduces their carrying capacity and their unskilled labor work speed. They won't be assigned to hauling or cleaning by default, but can be assigned to those tasks indefinitely with only a minor mood penalty, which doesn't get worse over time. For similar reasons, pawns who hate plant work or skilled labor can still be assigned to plant cutting with only a minor static mood penalty.
+
+- Rainbeau Flambe (dburgdorf)
+
+=====
+
+Compatibility:
+
+"Pawns are Capable!" can safely be added to a game in progress. It's probably also safe to remove from a game, but I'd recommend making sure before you remove it that none of your pawns are assigned to "hated" work types or have lingering mood debuffs from such assignments.
+
+=====
+
+Credits:
+
+Obviously, credit goes to RimRue for the idea and for allowing me to assist in the development of her original version of the mod.
+
+The Korean language files were provided by sogo100. The Japanese language translation files were provided by Steam user Proxyer.
+
+The mod utilizes Pardeike's "Harmony Patch Library." (No additional download is required, as the library is included with the mod.)
+
+=====
+
+License:
+
+If you're a modpack maker and want to include "Pawns are Capable!" in your pack, or if you're a modder and want to use it as the basis of a derivative mod, please feel free to do so. I ask only that you let me know about it. 
+
+=====
+
+If you have any (helpful) suggestions for improvement, please let me know!
+
+	</description>
+
+</ModMetaData>
